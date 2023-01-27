@@ -1,0 +1,66 @@
+{
+  "@context": {
+    "shacl": "http://www.w3.org/ns/shacl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "label": "rdfs:label",
+    "rdfs:subClassOf": { "@type": "@id" },
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "shacl:path": { "@type": "@id" },
+    "shacl:class": { "@type": "@id" },
+    "shacl:datatype": { "@type": "@id" },
+    "shacl:maxCount": { "@type": "xsd:integer" },
+    "shacl:minCount": { "@type": "xsd:integer" }
+  },
+  "@id": "https://skl.standard.storage/File",
+  "@type": ["owl:Class", "shacl:NodeShape"],
+  "rdfs:label": "File",
+  "rdfs:subClassOf": "https://skl.standard.storage/Noun",
+  "skos:definition": "An electronic document.",
+  "shacl:closed": false,
+  "shacl:property": [
+    {
+      "shacl:maxCount": 1,
+      "shacl:minCount": 1,
+      "shacl:path": "rdfs:label"
+    },
+    {
+      "shacl:maxCount": 1,
+      "shacl:minCount": 1,
+      "shacl:path": "https://skl.standard.storage/sourceId"
+    },
+    {
+      "shacl:class": "https://skl.standard.storage/Integration",
+      "shacl:maxCount": 1,
+      "shacl:minCount": 1,
+      "shacl:nodeKind": { "@id": "shacl:IRI" },
+      "shacl:path": "https://skl.standard.storage/integration"
+    },
+    {
+      "shacl:maxCount": 1,
+      "shacl:path": "https://skl.standard.storage/size"
+    },
+    {
+      "shacl:maxCount": 1,
+      "shacl:path": "https://skl.standard.storage/url"
+    },
+    {
+      "shacl:maxCount": 1,
+      "shacl:path": "https://skl.standard.storage/md5Checksum"
+    },
+    {
+      "shacl:maxCount": 1,
+      "shacl:path": "https://skl.standard.storage/mimeType"
+    },
+    {
+      "shacl:maxCount": 1,
+      "shacl:path": "https://skl.standard.storage/isWeblink"
+    },
+    {
+      "shacl:maxCount": 1,
+      "shacl:path": "https://skl.standard.storage/deleted"
+    }
+  ]
+}
