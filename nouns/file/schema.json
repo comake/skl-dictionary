@@ -14,10 +14,10 @@
     "shacl:maxCount": { "@type": "xsd:integer" },
     "shacl:minCount": { "@type": "xsd:integer" }
   },
-  "@id": "https://skl.standard.storage/File",
+  "@id": "https://example.com/File",
   "@type": ["owl:Class", "shacl:NodeShape"],
   "rdfs:label": "File",
-  "rdfs:subClassOf": "https://skl.standard.storage/Noun",
+  "rdfs:subClassOf": "https://standardknowledge.com/ontology/Noun",
   "skos:definition": "An electronic document.",
   "shacl:closed": false,
   "shacl:property": [
@@ -29,38 +29,38 @@
     {
       "shacl:maxCount": 1,
       "shacl:minCount": 1,
-      "shacl:path": "https://skl.standard.storage/sourceId"
+      "shacl:path": "https://standardknowledge.com/ontology/sourceId"
     },
     {
-      "shacl:class": "https://skl.standard.storage/Integration",
+      "shacl:class": "https://standardknowledge.com/ontology/Integration",
       "shacl:maxCount": 1,
       "shacl:minCount": 1,
       "shacl:nodeKind": { "@id": "shacl:IRI" },
-      "shacl:path": "https://skl.standard.storage/integration"
+      "shacl:path": "https://standardknowledge.com/ontology/integration"
     },
     {
       "shacl:maxCount": 1,
-      "shacl:path": "https://skl.standard.storage/size"
+      "shacl:path": "https://standardknowledge.com/ontology/size"
     },
     {
       "shacl:maxCount": 1,
-      "shacl:path": "https://skl.standard.storage/url"
+      "shacl:path": "https://standardknowledge.com/ontology/url"
     },
     {
       "shacl:maxCount": 1,
-      "shacl:path": "https://skl.standard.storage/md5Checksum"
+      "shacl:path": "https://standardknowledge.com/ontology/md5Checksum"
     },
     {
       "shacl:maxCount": 1,
-      "shacl:path": "https://skl.standard.storage/mimeType"
+      "shacl:path": "https://standardknowledge.com/ontology/mimeType"
     },
     {
       "shacl:maxCount": 1,
-      "shacl:path": "https://skl.standard.storage/isWeblink"
+      "shacl:path": "https://standardknowledge.com/ontology/isWeblink"
     },
     {
       "shacl:maxCount": 1,
-      "shacl:path": "https://skl.standard.storage/deleted"
+      "shacl:path": "https://standardknowledge.com/ontology/deleted"
     }
   ]
 }
