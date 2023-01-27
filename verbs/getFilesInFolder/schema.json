@@ -1,0 +1,77 @@
+{
+  "@context": {
+    "shacl": "http://www.w3.org/ns/shacl#",
+    "fnml": "http://semweb.mmlab.be/ns/fnml#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "label": "rdfs:label",
+    "rdfs:subClassOf": { "@type": "@id" },
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "shacl:path": { "@type": "@id" },
+    "shacl:class": { "@type": "@id" },
+    "shacl:datatype": { "@type": "@id" },
+    "shacl:maxCount": { "@type": "xsd:integer" },
+    "shacl:minCount": { "@type": "xsd:integer" },
+    "shacl:targetClass": { "@type": "@id" }
+  },
+  "@id": "https://example.com/getFilesInFolder",
+  "@type": "https://standardknowledge.com/ontology/Verb",
+  "label": "getFilesInFolder",
+  "https://standardknowledge.com/ontology/parametersContext": {
+    "limit": {
+      "@id": "https://standardknowledge.com/ontology/limit",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "token": {
+      "@id": "https://standardknowledge.com/ontology/token",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "folder": {
+      "@id": "https://standardknowledge.com/ontology/folder",
+      "@type": "@id"
+    },
+    "account": {
+      "@id": "https://standardknowledge.com/ontology/account",
+      "@type": "@id"
+    }
+  },
+  "https://standardknowledge.com/ontology/parameters": {
+    "@type": "shacl:NodeShape",
+    "shacl:targetClass": "https://standardknowledge.com/ontology/Parameters",
+    "shacl:property": [
+      {
+        "shacl:datatype": "xsd:integer",
+        "shacl:maxCount": 1,
+        "shacl:name": "limit",
+        "shacl:path": "https://standardknowledge.com/ontology/limit"
+      },
+      {
+        "shacl:datatype": "xsd:string",
+        "shacl:maxCount": 1,
+        "shacl:name": "token",
+        "shacl:path": "https://standardknowledge.com/ontology/token"
+      },
+      {
+        "shacl:class": "https://standardknowledge.com/ontology/Folder",
+        "shacl:maxCount": 1,
+        "shacl:name": "folder",
+        "shacl:path": "https://standardknowledge.com/ontology/folder"
+      },
+      {
+        "shacl:maxCount": 1,
+        "shacl:minCount": 1,
+        "shacl:name": "account",
+        "shacl:path": "https://standardknowledge.com/ontology/account"
+      }
+    ]
+  },
+  "https://standardknowledge.com/ontology/returnValue": {
+    "@id": "https://standardknowledge.com/ontology/TokenPaginatedCollection"
+  },
+  "https://standardknowledge.com/ontology/returnValueFrame": {
+    "@type": "https://standardknowledge.com/ontology/Collection"
+  }
+}
