@@ -16,7 +16,7 @@
   },
   "@id": "https://standardknowledge.com/ontology/Verb",
   "@type": ["owl:Class", "shacl:NodeShape"],
-  "rdfs:label": "Verb",
+  "label": "Verb",
   "shacl:closed": false,
   "shacl:property": [
     {

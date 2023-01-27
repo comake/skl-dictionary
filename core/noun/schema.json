@@ -13,6 +13,7 @@
   "shacl:property": [
     { 
       "shacl:maxCount": 1,
+      "shacl:minCount": 1,
       "shacl:path": "http://www.w3.org/2000/01/rdf-schema#label" 
     }
   ]
