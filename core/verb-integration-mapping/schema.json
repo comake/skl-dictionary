@@ -1,0 +1,52 @@
+{
+  "@context": {
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "shacl": "http://www.w3.org/ns/shacl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "label": "rdfs:label",
+    "rdfs:subClassOf": { "@type": "@id" },
+    "shacl:path": { "@type": "@id" },
+    "shacl:class": { "@type": "@id" },
+    "shacl:datatype": { "@type": "@id" },
+    "shacl:maxCount": { "@type": "xsd:integer" },
+    "shacl:minCount": { "@type": "xsd:integer" },
+    "rr": "http://www.w3.org/ns/r2rml#",
+  },
+  "@id": "https://standardknowledge.com/ontology/VerbIntegrationMapping",
+  "@type": ["owl:Class", "shacl:NodeShape"],
+  "label": "Verb to Integration Mapping",
+  "rdfs:subClassOf": "https://standardknowledge.com/ontology/Mapping",
+  "shacl:closed": false,
+  "shacl:property": [
+    {
+      "shacl:class": "rr:TriplesMap",
+      "shacl:nodeKind": { "@id": "shacl:IRI" },
+      "shacl:path": "https://standardknowledge.com/ontology/parameterMapping"
+    },
+    {
+      "shacl:class": "https://standardknowledge.com/ontology/Verb",
+      "shacl:maxCount": 1,
+      "shacl:minCount": 1,
+      "shacl:nodeKind": { "@id": "shacl:IRI" },
+      "shacl:path": "https://standardknowledge.com/ontology/verb"
+    },
+    {
+      "shacl:class": "rr:TriplesMap",
+      "shacl:nodeKind": { "@id": "shacl:IRI" },
+      "shacl:path": "https://standardknowledge.com/ontology/operationMapping"
+    },
+    {
+      "shacl:class": "rr:TriplesMap",
+      "shacl:nodeKind": { "@id": "shacl:IRI" },
+      "shacl:path": "https://standardknowledge.com/ontology/returnValueMapping"
+    },
+    {
+      "shacl:class": "https://standardknowledge.com/ontology/Integration",
+      "shacl:maxCount": 1,
+      "shacl:minCount": 1,
+      "shacl:nodeKind": { "@id": "shacl:IRI" },
+      "shacl:path": "https://standardknowledge.com/ontology/integration"
+    }
+  ]
+}

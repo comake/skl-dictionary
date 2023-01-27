@@ -1,10 +1,13 @@
 {
   "@context": {
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
     "shacl": "http://www.w3.org/ns/shacl#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "label": "rdfs:label",
     "shacl:path": { "@type": "@id" },
-    "shacl:maxCount": { "@type": "xsd:integer" }
+    "shacl:maxCount": { "@type": "xsd:integer" },
+    "shacl:minCount": { "@type": "xsd:integer" }
   },
   "@id": "https://skl.standard.storage/Noun",
   "@type": ["owl:Class", "shacl:NodeShape"],
@@ -15,6 +18,10 @@
       "shacl:maxCount": 1,
       "shacl:minCount": 1,
       "shacl:path": "http://www.w3.org/2000/01/rdf-schema#label" 
+    },
+    { 
+      "shacl:maxCount": 1,
+      "shacl:path": "http://purl.org/dc/terms/description" 
     }
   ]
 }

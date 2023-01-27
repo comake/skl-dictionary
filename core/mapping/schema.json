@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "shacl": "http://www.w3.org/ns/shacl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "label": "rdfs:label",
+    "rdfs:subClassOf": { "@type": "@id" }
+  },
+  "@id": "https://standardknowledge.com/ontology/Mapping",
+  "@type": ["owl:Class", "shacl:NodeShape"],
+  "label": "Integration",
+  "rdfs:subClassOf": "https://standardknowledge.com/ontology/Noun",
+  "shacl:closed": false
+}
