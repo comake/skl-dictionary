@@ -11,7 +11,7 @@
     "shacl:datatype": { "@type": "@id" },
     "shacl:maxCount": { "@type": "xsd:integer" },
     "shacl:minCount": { "@type": "xsd:integer" },
-    "rr": "http://www.w3.org/ns/r2rml#",
+    "rr": "http://www.w3.org/ns/r2rml#"
   },
   "@id": "https://standardknowledge.com/ontology/VerbIntegrationMapping",
   "@type": ["owl:Class", "shacl:NodeShape"],
@@ -40,6 +40,11 @@
       "shacl:class": "rr:TriplesMap",
       "shacl:nodeKind": { "@id": "shacl:IRI" },
       "shacl:path": "https://standardknowledge.com/ontology/returnValueMapping"
+    },
+    {
+      "shacl:maxCount": 1,
+      "shacl:nodeKind": { "@id": "shacl:BlankNodeOrIRI" },
+      "shacl:path": "https://standardknowledge.com/ontology/returnValueFrame"
     },
     {
       "shacl:class": "https://standardknowledge.com/ontology/Integration",
