@@ -1,4 +1,4 @@
-# Welcome to SKL Schemas!
+# Welcome to the SKL Dictionary!
 
 This repository contains a library of schemas for the Standard Knowledge Language.
 
