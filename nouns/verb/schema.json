@@ -1,0 +1,48 @@
+{  
+  "@context": {
+    "shacl": "http://www.w3.org/ns/shacl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "label": "rdfs:label",
+    "rdfs:subClassOf": { "@type": "@id" },
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "shacl:path": { "@type": "@id" },
+    "shacl:class": { "@type": "@id" },
+    "shacl:datatype": { "@type": "@id" },
+    "shacl:maxCount": { "@type": "xsd:integer" },
+    "shacl:minCount": { "@type": "xsd:integer" }
+  },
+  "@id": "https://standardknowledge.com/ontology/Verb",
+  "@type": ["owl:Class", "shacl:NodeShape"],
+  "rdfs:label": "Verb",
+  "shacl:closed": false,
+  "shacl:property": [
+    {
+      "shacl:class": "shacl:NodeShape",
+      "shacl:maxCount": 1,
+      "shacl:path": "https://standardknowledge.com/ontology/returnValue"
+    },
+    {
+      "shacl:class": "shacl:NodeShape",
+      "shacl:maxCount": 1,
+      "shacl:nodeKind": { "@id": "shacl:BlankNode" },
+      "shacl:path": "https://standardknowledge.com/ontology/returnValueFrame"
+    },
+    {
+      "shacl:class": "shacl:NodeShape",
+      "shacl:maxCount": 1,
+      "shacl:nodeKind": { "@id": "shacl:BlankNode" },
+      "shacl:path": "https://standardknowledge.com/ontology/parameters"
+    },
+    {
+        "shacl:maxCount": 1,
+        "shacl:path": "https://standardknowledge.com/ontology/parametersContext"
+      },
+    {
+      "shacl:maxCount": 1,
+      "shacl:path": "rdfs:label"
+    }
+  ]
+}
