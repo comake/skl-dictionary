@@ -1,26 +1,26 @@
-# [Verb](core/verb/schema.json)
+# [Verb](../../core/verb/schema.json)
 
 An SKL Schema
 
 
 
-[Noun](core/noun/schema.json) > [Verb](core/verb/schema.json)
+[Noun](../../core/noun/schema.json) > [Verb](../../core/verb/schema.json)
 
 ## Properties
 
-### Properties from [Verb](core/verb/schema.json)
+### Properties from [Verb](../../core/verb/schema.json)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| returnValue | http://www.w3.org/ns/shacl#NodeShape | |
-| returnValueFrame | http://www.w3.org/ns/shacl#NodeShape | |
-| parameters | http://www.w3.org/ns/shacl#NodeShape | |
-| parametersContext | http://www.w3.org/2001/XMLSchema#string | |
+| returnValue | 2 | |
+| returnValueFrame | 2 | |
+| parameters | 2 | |
+| parametersContext | 2 | |
 
-### Properties from [Noun](core/noun/schema.json)
+### Properties from [Noun](../../core/noun/schema.json)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| description | http://www.w3.org/2001/XMLSchema#string | |
+| label | 2 | |
+| description | 2 | |
 

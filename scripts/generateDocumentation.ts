@@ -74,25 +74,27 @@ export function getIdIfDefined(nodeObject?: NodeObject | string): string | undef
 interface ParsedSchemaAndPath {
   schema: NodeObject; 
   path: ParsedPath;
-  propertiesDoc?: string;
-  inheritanceDoc?: string[];
 }
 
-function linkToSchema(schema: NodeObject) {
+function linkToSchema(schema: NodeObject, relativeDepth: number) {
   const schemaWithFilePath = schemasWithFilePathById[schema['@id'] as string];
   if (schemaWithFilePath) {
-    return path.join(schemaWithFilePath.path.dir, schemaWithFilePath.path.base);
+    const paths = [schemaWithFilePath.path.dir, schemaWithFilePath.path.base];
+    for (let i = 0; i < relativeDepth; i++) {
+      paths.unshift('..');
+    }
+    return path.join(...paths);
   }
   return ''
 }
 
-function labelForSchemaAsLink(schema: NodeObject) {
-  return `[${getValueIfDefined(schema[RDFS.label]) || schema['@id']}](${linkToSchema(schema)})`;
+function labelForSchemaAsLink(schema: NodeObject, relativeDepth: number) {
+  return `[${getValueIfDefined(schema[RDFS.label]) || schema['@id']}](${linkToSchema(schema, relativeDepth)})`;
 }
 
-function labelForSchemaAsLinkWithId(schemaId: string) {
+function labelForSchemaAsLinkWithId(schemaId: string, relativeDepth: number) {
   const schemaWithFilePath = schemasWithFilePathById[schemaId];
-  return `[${getValueIfDefined(schemaWithFilePath.schema[RDFS.label]) || schemaWithFilePath.schema['@id']}](${linkToSchema(schemaWithFilePath.schema)})`;
+  return `[${getValueIfDefined(schemaWithFilePath.schema[RDFS.label]) || schemaWithFilePath.schema['@id']}](${linkToSchema(schemaWithFilePath.schema, relativeDepth)})`;
 }
 
 function propertyName(property: NodeObject) {
@@ -100,11 +102,11 @@ function propertyName(property: NodeObject) {
     getIdIfDefined(ensureArray<NodeObject>(property[SHACL.path] as NodeObject[])[0])
 }
 
-function propertyType(property: NodeObject) {
+function propertyType(property: NodeObject, relativeDepth: number) {
   if (SHACL.class in property) {
     const value = getIdIfDefined(ensureArray<NodeObject>(property[SHACL.class] as NodeObject)[0]) ?? '';
     if (value in schemasWithFilePathById) {
-      return labelForSchemaAsLinkWithId(value);
+      return labelForSchemaAsLinkWithId(value, relativeDepth);
     }
     return value;
   }
@@ -117,18 +119,13 @@ function propertyType(property: NodeObject) {
   return XSD.string;
 }
 
-function generateDocumentationPropertyRows(schema: NodeObject): string {
-  const schemaId = schema['@id'] as string
-  if (schemasWithFilePathById[schemaId].propertiesDoc) {
-    return schemasWithFilePathById[schemaId].propertiesDoc!;
-  }
-
+function generateDocumentationPropertyRows(schema: NodeObject, relativeDepth: number): string {
   const parentClassesDocs = ensureArray<NodeObject>(schema[RDFS.subClassOf] as NodeObject[])
     .reduce((arr: string[], parent) => {
       const parentId = getIdIfDefined(parent);
       if (parentId && parentId in schemasWithFilePathById) {
         const parentSchema = schemasWithFilePathById[parentId].schema;
-        arr.push(generateDocumentationPropertyRows(parentSchema));
+        arr.push(generateDocumentationPropertyRows(parentSchema, relativeDepth));
       }
       return arr
     }, [])
@@ -136,12 +133,12 @@ function generateDocumentationPropertyRows(schema: NodeObject): string {
 
   const propertyDocs = ensureArray<NodeObject>(schema[SHACL.property] as NodeObject[])
     .map((property) => (
-      `| ${propertyName(property)} | ${propertyType(property)} | |`
+      `| ${propertyName(property)} | ${propertyType(property, relativeDepth), relativeDepth} | |`
     ))
     .join('\n');
   
   const docs = [
-    `### Properties from ${labelForSchemaAsLink(schema)}`,
+    `### Properties from ${labelForSchemaAsLink(schema, relativeDepth)}`,
     '',
     '| name | Type | Description |',
     '| ---- | ---- | ----------- |',
@@ -150,31 +147,25 @@ function generateDocumentationPropertyRows(schema: NodeObject): string {
     parentClassesDocs
   ].join('\n');
 
-  schemasWithFilePathById[schemaId].propertiesDoc = docs;
   return docs;
 }
 
-async function generateDocumentationPropertySection(schema: NodeObject): Promise<string> {
+async function generateDocumentationPropertySection(schema: NodeObject, relativeDepth: number): Promise<string> {
   return [
     '## Properties',
     '',
-    generateDocumentationPropertyRows(schema),
+    generateDocumentationPropertyRows(schema, relativeDepth),
   ].join('\n');
 }
 
-function generateInheritanceHierarchy(schema: NodeObject): string[] {
-  const schemaId = schema['@id'] as string
-  if (schemasWithFilePathById[schemaId].inheritanceDoc) {
-    return schemasWithFilePathById[schemaId].inheritanceDoc!;
-  }
-
+function generateInheritanceHierarchy(schema: NodeObject, relativeDepth: number): string[] {
   const parentClassInheritances = ensureArray<NodeObject>(schema[RDFS.subClassOf] as NodeObject[])
     .reduce((arr: string[], parent) => {
       const parentId = getIdIfDefined(parent);
       if (parentId) {
         if (parentId in schemasWithFilePathById) {
           const parentSchema = schemasWithFilePathById[parentId].schema;
-          arr = [ ...arr, ...generateInheritanceHierarchy(parentSchema)];
+          arr = [ ...arr, ...generateInheritanceHierarchy(parentSchema, relativeDepth)];
         } else {
           arr.push(parentId);
         }
@@ -187,34 +178,33 @@ function generateInheritanceHierarchy(schema: NodeObject): string[] {
     inheritanceStrings = parentClassInheritances.map((parentClassInheritance) => {
       return [
         parentClassInheritance,
-        labelForSchemaAsLink(schema),
+        labelForSchemaAsLink(schema, relativeDepth),
       ].join(' > ');
     });
   } else {
-    inheritanceStrings = [labelForSchemaAsLink(schema)];
+    inheritanceStrings = [labelForSchemaAsLink(schema, relativeDepth)];
   }
-  schemasWithFilePathById[schemaId].inheritanceDoc = inheritanceStrings;
   return inheritanceStrings;
 }
 
-function generateDocumentationHeader(schema: NodeObject) {
+function generateDocumentationHeader(schema: NodeObject, relativeDepth: number) {
   return [
-    `# ${labelForSchemaAsLink(schema)}`,
+    `# ${labelForSchemaAsLink(schema, relativeDepth)}`,
     '',
     'An SKL Schema',
     '',
     DCTERMS.description in schema ? getValueIfDefined(schema[DCTERMS.description]) : '',
     '',
-    ...generateInheritanceHierarchy(schema),
+    ...generateInheritanceHierarchy(schema, relativeDepth),
   ].join('\n');
 }
 
 
-async function generateDocumentationForFile(schema: NodeObject): Promise<string> {
+async function generateDocumentationForFile(schema: NodeObject, relativeDepth: number): Promise<string> {
   return [
-    generateDocumentationHeader(schema),
+    generateDocumentationHeader(schema, relativeDepth),
     '',
-    await generateDocumentationPropertySection(schema),
+    await generateDocumentationPropertySection(schema, relativeDepth),
   ].join('\n');
 }
 
@@ -234,7 +224,8 @@ async function generateDocumentation() {
   }
 
   for (const schemaWithFilePath of Object.values(schemasWithFilePathById)) {
-    const doc = await generateDocumentationForFile(schemaWithFilePath.schema);
+    const fileDepth = schemaWithFilePath.path.dir.split(path.sep).length;
+    const doc = await generateDocumentationForFile(schemaWithFilePath.schema, fileDepth);
     const readmePath = path.join(schemaWithFilePath.path.dir, 'README.md');
     await fs.writeFile(readmePath, doc);
   }

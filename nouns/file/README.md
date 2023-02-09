@@ -1,31 +1,31 @@
-# [File](nouns/file/schema.json)
+# [File](../../nouns/file/schema.json)
 
 An SKL Schema
 
 An electronic document.
 
-[Noun](core/noun/schema.json) > [File](nouns/file/schema.json)
+[Noun](../../core/noun/schema.json) > [File](../../nouns/file/schema.json)
 
 ## Properties
 
-### Properties from [File](nouns/file/schema.json)
+### Properties from [File](../../nouns/file/schema.json)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| sourceId | http://www.w3.org/2001/XMLSchema#string | |
-| integration | [Integration](core/integration/schema.json) | |
-| size | http://www.w3.org/2001/XMLSchema#string | |
-| url | http://www.w3.org/2001/XMLSchema#string | |
-| md5Checksum | http://www.w3.org/2001/XMLSchema#string | |
-| mimeType | http://www.w3.org/2001/XMLSchema#string | |
-| isWeblink | http://www.w3.org/2001/XMLSchema#string | |
-| deleted | http://www.w3.org/2001/XMLSchema#string | |
+| label | 2 | |
+| sourceId | 2 | |
+| integration | 2 | |
+| size | 2 | |
+| url | 2 | |
+| md5Checksum | 2 | |
+| mimeType | 2 | |
+| isWeblink | 2 | |
+| deleted | 2 | |
 
-### Properties from [Noun](core/noun/schema.json)
+### Properties from [Noun](../../core/noun/schema.json)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| description | http://www.w3.org/2001/XMLSchema#string | |
+| label | 2 | |
+| description | 2 | |
 
