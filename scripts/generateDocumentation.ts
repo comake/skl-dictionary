@@ -79,7 +79,7 @@ interface ParsedSchemaAndPath {
 function linkToSchema(schema: NodeObject, relativeDepth: number) {
   const schemaWithFilePath = schemasWithFilePathById[schema['@id'] as string];
   if (schemaWithFilePath) {
-    const paths = [schemaWithFilePath.path.dir, schemaWithFilePath.path.base];
+    const paths = [schemaWithFilePath.path.dir];
     for (let i = 0; i < relativeDepth; i++) {
       paths.unshift('..');
     }
