@@ -133,7 +133,7 @@ function generateDocumentationPropertyRows(schema: NodeObject, relativeDepth: nu
 
   const propertyDocs = ensureArray<NodeObject>(schema[SHACL.property] as NodeObject[])
     .map((property) => (
-      `| ${propertyName(property)} | ${propertyType(property, relativeDepth), relativeDepth} | |`
+      `| ${propertyName(property)} | ${propertyType(property, relativeDepth)} | |`
     ))
     .join('\n');
   

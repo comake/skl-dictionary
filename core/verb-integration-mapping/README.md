@@ -12,12 +12,12 @@ An SKL Schema
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| parameterMapping | 2 | |
-| verb | 2 | |
-| operationMapping | 2 | |
-| returnValueMapping | 2 | |
-| returnValueFrame | 2 | |
-| integration | 2 | |
+| parameterMapping | http://www.w3.org/ns/r2rml#TriplesMap | |
+| verb | [Verb](../../core/verb) | |
+| operationMapping | http://www.w3.org/ns/r2rml#TriplesMap | |
+| returnValueMapping | http://www.w3.org/ns/r2rml#TriplesMap | |
+| returnValueFrame | http://www.w3.org/ns/shacl#BlankNodeOrIRI | |
+| integration | [Integration](../../core/integration) | |
 
 ### Properties from [Mapping](../../core/mapping)
 
@@ -29,6 +29,6 @@ An SKL Schema
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | 2 | |
-| description | 2 | |
+| label | http://www.w3.org/2001/XMLSchema#string | |
+| description | http://www.w3.org/2001/XMLSchema#string | |
 

@@ -12,17 +12,17 @@ An SKL Schema
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| refreshToken | 2 | |
-| account | 2 | |
-| accessToken | 2 | |
-| apiKey | 2 | |
-| clientId | 2 | |
-| clientSecret | 2 | |
+| refreshToken | http://www.w3.org/2001/XMLSchema#string | |
+| account | [Account](../../core/account) | |
+| accessToken | http://www.w3.org/2001/XMLSchema#string | |
+| apiKey | http://www.w3.org/2001/XMLSchema#string | |
+| clientId | http://www.w3.org/2001/XMLSchema#string | |
+| clientSecret | http://www.w3.org/2001/XMLSchema#string | |
 
 ### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | 2 | |
-| description | 2 | |
+| label | http://www.w3.org/2001/XMLSchema#string | |
+| description | http://www.w3.org/2001/XMLSchema#string | |
 

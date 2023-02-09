@@ -12,6 +12,6 @@ A data structure representing a concept commonly used by software tools.
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | 2 | |
-| description | 2 | |
+| label | http://www.w3.org/2001/XMLSchema#string | |
+| description | http://www.w3.org/2001/XMLSchema#string | |
 

@@ -12,20 +12,20 @@ An electronic document.
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | 2 | |
-| sourceId | 2 | |
-| integration | 2 | |
-| size | 2 | |
-| url | 2 | |
-| md5Checksum | 2 | |
-| mimeType | 2 | |
-| isWeblink | 2 | |
-| deleted | 2 | |
+| label | http://www.w3.org/2001/XMLSchema#string | |
+| sourceId | http://www.w3.org/2001/XMLSchema#string | |
+| integration | [Integration](../../core/integration) | |
+| size | http://www.w3.org/2001/XMLSchema#string | |
+| url | http://www.w3.org/2001/XMLSchema#string | |
+| md5Checksum | http://www.w3.org/2001/XMLSchema#string | |
+| mimeType | http://www.w3.org/2001/XMLSchema#string | |
+| isWeblink | http://www.w3.org/2001/XMLSchema#string | |
+| deleted | http://www.w3.org/2001/XMLSchema#string | |
 
 ### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | 2 | |
-| description | 2 | |
+| label | http://www.w3.org/2001/XMLSchema#string | |
+| description | http://www.w3.org/2001/XMLSchema#string | |
 

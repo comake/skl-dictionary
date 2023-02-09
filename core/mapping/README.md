@@ -18,6 +18,6 @@ A set of configuration which dictates how a program can translate between Nouns 
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | 2 | |
-| description | 2 | |
+| label | http://www.w3.org/2001/XMLSchema#string | |
+| description | http://www.w3.org/2001/XMLSchema#string | |
 

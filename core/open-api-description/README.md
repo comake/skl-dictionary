@@ -12,13 +12,13 @@ An SKL Schema
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| integration | 2 | |
-| openApiDescription | 2 | |
+| integration | [Integration](../../core/integration) | |
+| openApiDescription | http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON | |
 
 ### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | 2 | |
-| description | 2 | |
+| label | http://www.w3.org/2001/XMLSchema#string | |
+| description | http://www.w3.org/2001/XMLSchema#string | |
 

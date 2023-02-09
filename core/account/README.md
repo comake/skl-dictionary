@@ -12,13 +12,13 @@ A representation of a person, company, or other entity's registration and use of
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| integration | 2 | |
-| email | 2 | |
+| integration | [Integration](../../core/integration) | |
+| email | http://www.w3.org/2001/XMLSchema#string | |
 
 ### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | 2 | |
-| description | 2 | |
+| label | http://www.w3.org/2001/XMLSchema#string | |
+| description | http://www.w3.org/2001/XMLSchema#string | |
 

@@ -12,15 +12,15 @@ An SKL Schema
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| returnValue | 2 | |
-| returnValueFrame | 2 | |
-| parameters | 2 | |
-| parametersContext | 2 | |
+| returnValue | http://www.w3.org/ns/shacl#NodeShape | |
+| returnValueFrame | http://www.w3.org/ns/shacl#NodeShape | |
+| parameters | http://www.w3.org/ns/shacl#NodeShape | |
+| parametersContext | http://www.w3.org/2001/XMLSchema#string | |
 
 ### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | 2 | |
-| description | 2 | |
+| label | http://www.w3.org/2001/XMLSchema#string | |
+| description | http://www.w3.org/2001/XMLSchema#string | |
 
