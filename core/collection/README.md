@@ -1,21 +1,21 @@
-# [Collection](../../core/collection/schema.json)
+# [Collection](../../core/collection)
 
 An SKL Schema
 
 A collection of records, eg. returned as data in the response of an API.
 
-[Noun](../../core/noun/schema.json) > [Collection](../../core/collection/schema.json)
+[Noun](../../core/noun) > [Collection](../../core/collection)
 
 ## Properties
 
-### Properties from [Collection](../../core/collection/schema.json)
+### Properties from [Collection](../../core/collection)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | records | 2 | |
 | linkedRecords | 2 | |
 
-### Properties from [Noun](../../core/noun/schema.json)
+### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |

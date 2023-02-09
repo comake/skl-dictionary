@@ -1,21 +1,21 @@
-# [OpenApiDescription](../../core/open-api-description/schema.json)
+# [OpenApiDescription](../../core/open-api-description)
 
 An SKL Schema
 
 
 
-[Noun](../../core/noun/schema.json) > [OpenApiDescription](../../core/open-api-description/schema.json)
+[Noun](../../core/noun) > [OpenApiDescription](../../core/open-api-description)
 
 ## Properties
 
-### Properties from [OpenApiDescription](../../core/open-api-description/schema.json)
+### Properties from [OpenApiDescription](../../core/open-api-description)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | integration | 2 | |
 | openApiDescription | 2 | |
 
-### Properties from [Noun](../../core/noun/schema.json)
+### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |

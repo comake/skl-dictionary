@@ -1,20 +1,20 @@
-# [Integration](../../core/integration/schema.json)
+# [Integration](../../core/integration)
 
 An SKL Schema
 
 A software tool or serivce which makes data or capabilities accessible via an API.
 
-[Noun](../../core/noun/schema.json) > [Integration](../../core/integration/schema.json)
+[Noun](../../core/noun) > [Integration](../../core/integration)
 
 ## Properties
 
-### Properties from [Integration](../../core/integration/schema.json)
+### Properties from [Integration](../../core/integration)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
 
 
-### Properties from [Noun](../../core/noun/schema.json)
+### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |

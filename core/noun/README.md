@@ -1,14 +1,14 @@
-# [Noun](../../core/noun/schema.json)
+# [Noun](../../core/noun)
 
 An SKL Schema
 
 A data structure representing a concept commonly used by software tools.
 
-[Noun](../../core/noun/schema.json)
+[Noun](../../core/noun)
 
 ## Properties
 
-### Properties from [Noun](../../core/noun/schema.json)
+### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |

@@ -1,14 +1,14 @@
-# [Security Credentials](../../core/security-credentials/schema.json)
+# [Security Credentials](../../core/security-credentials)
 
 An SKL Schema
 
 
 
-[Noun](../../core/noun/schema.json) > [Security Credentials](../../core/security-credentials/schema.json)
+[Noun](../../core/noun) > [Security Credentials](../../core/security-credentials)
 
 ## Properties
 
-### Properties from [Security Credentials](../../core/security-credentials/schema.json)
+### Properties from [Security Credentials](../../core/security-credentials)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
@@ -19,7 +19,7 @@ An SKL Schema
 | clientId | 2 | |
 | clientSecret | 2 | |
 
-### Properties from [Noun](../../core/noun/schema.json)
+### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |

@@ -1,14 +1,14 @@
-# [Verb](../../core/verb/schema.json)
+# [Verb](../../core/verb)
 
 An SKL Schema
 
 
 
-[Noun](../../core/noun/schema.json) > [Verb](../../core/verb/schema.json)
+[Noun](../../core/noun) > [Verb](../../core/verb)
 
 ## Properties
 
-### Properties from [Verb](../../core/verb/schema.json)
+### Properties from [Verb](../../core/verb)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
@@ -17,7 +17,7 @@ An SKL Schema
 | parameters | 2 | |
 | parametersContext | 2 | |
 
-### Properties from [Noun](../../core/noun/schema.json)
+### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |

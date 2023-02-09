@@ -1,14 +1,14 @@
-# [File](../../nouns/file/schema.json)
+# [File](../../nouns/file)
 
 An SKL Schema
 
 An electronic document.
 
-[Noun](../../core/noun/schema.json) > [File](../../nouns/file/schema.json)
+[Noun](../../core/noun) > [File](../../nouns/file)
 
 ## Properties
 
-### Properties from [File](../../nouns/file/schema.json)
+### Properties from [File](../../nouns/file)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
@@ -22,7 +22,7 @@ An electronic document.
 | isWeblink | 2 | |
 | deleted | 2 | |
 
-### Properties from [Noun](../../core/noun/schema.json)
+### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |

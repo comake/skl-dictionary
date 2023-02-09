@@ -1,14 +1,14 @@
-# [Verb to Integration Mapping](../../core/verb-integration-mapping/schema.json)
+# [Verb to Integration Mapping](../../core/verb-integration-mapping)
 
 An SKL Schema
 
 
 
-[Noun](../../core/noun/schema.json) > [Mapping](../../core/mapping/schema.json) > [Verb to Integration Mapping](../../core/verb-integration-mapping/schema.json)
+[Noun](../../core/noun) > [Mapping](../../core/mapping) > [Verb to Integration Mapping](../../core/verb-integration-mapping)
 
 ## Properties
 
-### Properties from [Verb to Integration Mapping](../../core/verb-integration-mapping/schema.json)
+### Properties from [Verb to Integration Mapping](../../core/verb-integration-mapping)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
@@ -19,13 +19,13 @@ An SKL Schema
 | returnValueFrame | 2 | |
 | integration | 2 | |
 
-### Properties from [Mapping](../../core/mapping/schema.json)
+### Properties from [Mapping](../../core/mapping)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
 
 
-### Properties from [Noun](../../core/noun/schema.json)
+### Properties from [Noun](../../core/noun)
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
