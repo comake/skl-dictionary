@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "shacl": "http://www.w3.org/ns/shacl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "skl": "https://standardknowledge.com/ontologies/core/",
+    "label": "rdfs:label",
+    "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
+    "dcterms": "http://purl.org/dc/elements/1.1/",
+    "description": "dcterms:description",
+    "path": { "@id": "shacl:path", "@type": "@id" },
+    "nodeKind": { "@id": "shacl:nodeKind", "@type": "@id" },
+    "class": { "@id": "shacl:class", "@type": "@id" },
+    "datatype": { "@id": "shacl:datatype", "@type": "@id" },
+    "maxCount": { "@id": "shacl:maxCount", "@type": "xsd:nteger" },
+    "minCount": { "@id": "shacl:minCount", "@type": "xsd:integer" },
+    "name": { "@id": "shacl:name", "@type": "xsd:string" },
+    "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
+    "property": { "@id": "shacl:property", "@type": "@id" }
+  },
+  "@graph": [
+    {
+      "@id": "https://standardknowledge.com/ontologies/core/OpenApiDescription",
+      "@type": ["owl:Class", "shacl:NodeShape"],
+      "label": "OpenApiDescription",
+      "subClassOf": "skl:Noun",
+      "closed": false,
+      "property": [
+        {
+          "class": "skl:Integration",
+          "maxCount": 1,
+          "minCount": 1,
+          "nodeKind": "shacl:IRI",
+          "path": "skl:integration",
+          "name": "integration"
+        },
+        {
+          "maxCount": 1,
+          "minCount": 1,
+          "path": "skl:openApiDescription",
+          "name": "openApiDescription",
+          "datatype": "rdf:JSON"
+        }
+      ]
+    }
+  ]
+}

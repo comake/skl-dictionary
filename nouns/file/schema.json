@@ -4,63 +4,79 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "label": "rdfs:label",
+    "dcterms": "http://purl.org/dc/terms/",
+    "description": "dcterms:description",
     "rdfs:subClassOf": { "@type": "@id" },
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "shacl:path": { "@type": "@id" },
-    "shacl:class": { "@type": "@id" },
-    "shacl:datatype": { "@type": "@id" },
-    "shacl:maxCount": { "@type": "xsd:integer" },
-    "shacl:minCount": { "@type": "xsd:integer" }
+    "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
+    "path": { "@id": "shacl:path", "@type": "@id" },
+    "class": { "@id": "shacl:class", "@type": "@id" },
+    "datatype": { "@id": "shacl:datatype", "@type": "@id" },
+    "maxCount": { "@id": "shacl:maxCount", "@type": "xsd:integer" },
+    "name": { "@id": "shacl:name", "@type": "xsd:string" },
+    "minCount": { "@id": "shacl:minCount", "@type": "xsd:integer" },
+    "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
+    "nodeKind": { "@id": "shacl:nodeKind", "@type": "@id" },
+    "property": { "@id": "shacl:property", "@type": "@id" },
+    "skl": "https://standardknowledge.com/ontologies/core/"
   },
   "@id": "https://example.com/File",
   "@type": ["owl:Class", "shacl:NodeShape"],
-  "rdfs:label": "File",
-  "rdfs:subClassOf": "https://standardknowledge.com/ontology/Noun",
-  "skos:definition": "An electronic document.",
-  "shacl:closed": false,
-  "shacl:property": [
+  "label": "File",
+  "subClassOf": "https://standardknowledge.com/ontologies/core/Noun",
+  "description": "An electronic document.",
+  "closed": false,
+  "property": [
     {
-      "shacl:maxCount": 1,
-      "shacl:minCount": 1,
-      "shacl:path": "rdfs:label"
+      "maxCount": 1,
+      "minCount": 1,
+      "path": "rdfs:label",
+      "name": "label"
     },
     {
-      "shacl:maxCount": 1,
-      "shacl:minCount": 1,
-      "shacl:path": "https://standardknowledge.com/ontology/sourceId"
+      "maxCount": 1,
+      "minCount": 1,
+      "path": "skl:sourceId",
+      "name": "sourceId"
     },
     {
-      "shacl:class": "https://standardknowledge.com/ontology/Integration",
-      "shacl:maxCount": 1,
-      "shacl:minCount": 1,
-      "shacl:nodeKind": { "@id": "shacl:IRI" },
-      "shacl:path": "https://standardknowledge.com/ontology/integration"
+      "class": "skl:Integration",
+      "maxCount": 1,
+      "minCount": 1,
+      "nodeKind": { "@id": "shacl:IRI" },
+      "path": "skl:integration",
+      "name": "integration"
     },
     {
-      "shacl:maxCount": 1,
-      "shacl:path": "https://standardknowledge.com/ontology/size"
+      "maxCount": 1,
+      "path": "skl:size",
+      "name": "size"
     },
     {
-      "shacl:maxCount": 1,
-      "shacl:path": "https://standardknowledge.com/ontology/url"
+      "maxCount": 1,
+      "path": "skl:url",
+      "name": "url"
     },
     {
-      "shacl:maxCount": 1,
-      "shacl:path": "https://standardknowledge.com/ontology/md5Checksum"
+      "maxCount": 1,
+      "path": "skl:md5Checksum",
+      "name": "md5Checksum"
     },
     {
-      "shacl:maxCount": 1,
-      "shacl:path": "https://standardknowledge.com/ontology/mimeType"
+      "maxCount": 1,
+      "path": "skl:mimeType",
+      "name": "mimeType"
     },
     {
-      "shacl:maxCount": 1,
-      "shacl:path": "https://standardknowledge.com/ontology/isWeblink"
+      "maxCount": 1,
+      "path": "skl:isWeblink",
+      "name": "isWeblink"
     },
     {
-      "shacl:maxCount": 1,
-      "shacl:path": "https://standardknowledge.com/ontology/deleted"
+      "maxCount": 1,
+      "path": "skl:deleted",
+      "name": "deleted"
     }
   ]
 }

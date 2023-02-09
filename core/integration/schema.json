@@ -2,13 +2,19 @@
   "@context": {
     "owl": "http://www.w3.org/2002/07/owl#",
     "shacl": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "label": "rdfs:label",
-    "rdfs:subClassOf": { "@type": "@id" }
+    "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
+    "dcterms": "http://purl.org/dc/terms/",
+    "description": "dcterms:description",
+    "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
+    "skl": "https://standardknowledge.com/ontologies/core/"
   },
-  "@id": "https://standardknowledge.com/ontology/Integration",
+  "@id": "https://standardknowledge.com/ontologies/core/Integration",
   "@type": ["owl:Class", "shacl:NodeShape"],
   "label": "Integration",
-  "rdfs:subClassOf": "https://standardknowledge.com/ontology/Noun",
-  "shacl:closed": false
+  "description": "A software tool or serivce which makes data or capabilities accessible via an API.",
+  "subClassOf": "skl:Noun",
+  "closed": false
 }

@@ -6,7 +6,7 @@
     "description": "dcterms:label"
   },
   "@id": "https://example.com/integrations/Dropbox",
-  "@type": "https://standardknowledge.com/ontology/Integration",
+  "@type": "https://standardknowledge.com/ontologies/core/Integration",
   "description": "Dropbox is a modern workspace designed to reduce busywork-so you can focus on the things that matter. Sign in and put your creative energy to work.",
   "label": "Dropbox"
 }

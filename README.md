@@ -13,3 +13,6 @@ This repository contains a library of schemas for the Standard Knowledge Languag
 - [Mappings](./mappings)
 
 - [OpenAPI definitions](./openapis)
+
+Note about example.com
+Add some schema.org

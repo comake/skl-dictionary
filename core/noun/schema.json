@@ -5,23 +5,32 @@
     "shacl": "http://www.w3.org/ns/shacl#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "label": "rdfs:label",
-    "shacl:path": { "@type": "@id" },
-    "shacl:maxCount": { "@type": "xsd:integer" },
-    "shacl:minCount": { "@type": "xsd:integer" }
+    "dcterms": "http://purl.org/dc/terms/",
+    "description": "dcterms:description",
+    "path": { "@id": "shacl:path", "@type": "@id" },
+    "maxCount": { "@id": "shacl:maxCount", "@type": "xsd:integer" },
+    "minCount": { "@id": "shacl:minCount", "@type": "xsd:integer" },
+    "name": { "@id": "shacl:name", "@type": "xsd:string" },
+    "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
+    "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
+    "property": { "@id": "shacl:property", "@type": "@id" }
   },
-  "@id": "https://skl.standard.storage/Noun",
+  "@id": "https://standardknowledge.com/ontologies/core/Noun",
   "@type": ["owl:Class", "shacl:NodeShape"],
   "label": "Noun",
-  "shacl:closed": false,
-  "shacl:property": [
+  "description": "A data structure representing a concept commonly used by software tools.",
+  "closed": false,
+  "property": [
     { 
-      "shacl:maxCount": 1,
-      "shacl:minCount": 1,
-      "shacl:path": "http://www.w3.org/2000/01/rdf-schema#label" 
+      "maxCount": 1,
+      "minCount": 1,
+      "path": "label",
+      "name": "label"
     },
     { 
-      "shacl:maxCount": 1,
-      "shacl:path": "http://purl.org/dc/terms/description" 
+      "maxCount": 1,
+      "path": "description",
+      "name": "description"
     }
   ]
 }

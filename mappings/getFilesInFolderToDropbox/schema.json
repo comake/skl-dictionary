@@ -8,7 +8,7 @@
     "shacl:maxCount": { "@type": "xsd:integer" }
   },
   "@id": "https://example.com/mappings/getFilesInFolderToDropbox",
-  "@type": "https://standardknowledge.com/ontology/VerbIntegrationMapping",
+  "@type": "https://standardknowledge.com/ontologies/core/VerbIntegrationMapping",
   "integration": "https://example.com/integrations/Dropbox",
   "label": "getFilesInFolderToDropbox",
   "verb": "https://example.com/getFilesInFolder",
@@ -80,7 +80,7 @@
         "rr:predicate": "sklproperties:operationId"
       }
     ],
-    "rr:subject": "https://standardknowledge.com/ontology/mappingSubject"
+    "rr:subject": "https://standardknowledge.com/ontologies/core/mappingSubject"
   },
   "parameterMapping": {
     "@type": "rr:TriplesMap",
@@ -156,7 +156,7 @@
         "rr:predicate": "sklproperties:cursor"
       }
     ],
-    "rr:subject": "https://standardknowledge.com/ontology/mappingSubject"
+    "rr:subject": "https://standardknowledge.com/ontologies/core/mappingSubject"
   },
   "returnValueMapping": [
     {
@@ -606,12 +606,12 @@
       ],
       "rr:subjectMap": {
         "@type": "rr:SubjectMap",
-        "rr:template": "https://standardknowledge.com/ontology/mappingSubject",
-        "rr:class": "https://standardknowledge.com/ontology/TokenPaginatedCollection"
+        "rr:template": "https://standardknowledge.com/ontologies/core/mappingSubject",
+        "rr:class": "https://standardknowledge.com/ontologies/core/TokenPaginatedCollection"
       }
     }
   ],
   "returnValueFrame": {
-    "@type": "https://standardknowledge.com/ontology/TokenPaginatedCollection"
+    "@type": "https://standardknowledge.com/ontologies/core/TokenPaginatedCollection"
   }
 }

@@ -9,69 +9,77 @@
     "rdfs:subClassOf": { "@type": "@id" },
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "shacl:path": { "@type": "@id" },
-    "shacl:class": { "@type": "@id" },
-    "shacl:datatype": { "@type": "@id" },
-    "shacl:maxCount": { "@type": "xsd:integer" },
-    "shacl:minCount": { "@type": "xsd:integer" },
-    "shacl:targetClass": { "@type": "@id" }
+    "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
+    "path": { "@id": "shacl:path", "@type": "@id" },
+    "class": { "@id": "shacl:class", "@type": "@id" },
+    "name": { "@id": "shacl:name", "@type": "xsd:string" },
+    "datatype": { "@id": "shacl:datatype", "@type": "@id" },
+    "maxCount": { "@id": "shacl:maxCount", "@type": "xsd:integer" },
+    "minCount": { "@id": "shacl:minCount", "@type": "xsd:integer" },
+    "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
+    "property": { "@id": "shacl:property", "@type": "@id" },
+    "targetClass": { "@id": "shacl:targetClass", "@type": "@id" },
+    "skl": "https://standardknowledge.com/ontologies/core/",
+    "example": "https://example.com/",
+    "skl:returnValueFrame": {
+      "@type": "@json"
+    }
   },
   "@id": "https://example.com/getFilesInFolder",
-  "@type": "https://standardknowledge.com/ontology/Verb",
+  "@type": "https://standardknowledge.com/ontologies/core/Verb",
   "label": "getFilesInFolder",
-  "https://standardknowledge.com/ontology/parametersContext": {
+  "skl:parametersContext": {
     "limit": {
-      "@id": "https://standardknowledge.com/ontology/limit",
+      "@id": "example:limit",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "token": {
-      "@id": "https://standardknowledge.com/ontology/token",
+      "@id": "example:token",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "folder": {
-      "@id": "https://standardknowledge.com/ontology/folder",
+      "@id": "example:folder",
       "@type": "@id"
     },
     "account": {
-      "@id": "https://standardknowledge.com/ontology/account",
+      "@id": "example:account",
       "@type": "@id"
     }
   },
-  "https://standardknowledge.com/ontology/parameters": {
+  "skl:parameters": {
     "@type": "shacl:NodeShape",
-    "shacl:targetClass": "https://standardknowledge.com/ontology/Parameters",
-    "shacl:property": [
+    "targetClass": "skl:Parameters",
+    "property": [
       {
-        "shacl:datatype": "xsd:integer",
-        "shacl:maxCount": 1,
-        "shacl:name": "limit",
-        "shacl:path": "https://standardknowledge.com/ontology/limit"
+        "datatype": "xsd:integer",
+        "maxCount": 1,
+        "name": "limit",
+        "path": "example:limit"
       },
       {
-        "shacl:datatype": "xsd:string",
-        "shacl:maxCount": 1,
-        "shacl:name": "token",
-        "shacl:path": "https://standardknowledge.com/ontology/token"
+        "datatype": "xsd:string",
+        "maxCount": 1,
+        "name": "token",
+        "path": "example:token"
       },
       {
-        "shacl:class": "https://standardknowledge.com/ontology/Folder",
-        "shacl:maxCount": 1,
-        "shacl:name": "folder",
-        "shacl:path": "https://standardknowledge.com/ontology/folder"
+        "class": "example:Folder",
+        "maxCount": 1,
+        "name": "folder",
+        "path": "example:folder"
       },
       {
-        "shacl:maxCount": 1,
-        "shacl:minCount": 1,
-        "shacl:name": "account",
-        "shacl:path": "https://standardknowledge.com/ontology/account"
+        "maxCount": 1,
+        "minCount": 1,
+        "name": "account",
+        "path": "example:account"
       }
     ]
   },
-  "https://standardknowledge.com/ontology/returnValue": {
-    "@id": "https://standardknowledge.com/ontology/TokenPaginatedCollection"
+  "skl:returnValue": {
+    "@id": "skl:TokenPaginatedCollection"
   },
-  "https://standardknowledge.com/ontology/returnValueFrame": {
-    "@type": "https://standardknowledge.com/ontology/Collection"
+  "skl:returnValueFrame": {
+    "@type": "https://standardknowledge.com/ontologies/core/Collection"
   }
 }

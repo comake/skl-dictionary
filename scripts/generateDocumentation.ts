@@ -1,0 +1,243 @@
+import glob  from 'glob'
+import path, { ParsedPath } from 'path'
+import { promises as fs } from 'fs';
+import jsonld, { NodeObject, ValueObject } from 'jsonld';
+
+const schemasWithFilePathById: Record<string, ParsedSchemaAndPath> = {};
+
+type Namespace<T extends string, TBase extends string> = {
+  [key in T]: `${TBase}${key}`
+};
+
+function createNamespace<T extends string, TBase extends string>(
+  baseUri: TBase,
+  localNames: T[],
+): Namespace<T, TBase> {
+  return localNames.reduce((obj: Namespace<T, TBase>, localName): Namespace<T, TBase> => (
+    { ...obj, [localName]: `${baseUri}${localName}` }
+  // eslint-disable-next-line @typescript-eslint/prefer-reduce-type-parameter
+  ), {} as Namespace<T, TBase>);
+}
+
+const RDFS = createNamespace('http://www.w3.org/2000/01/rdf-schema#', [
+  'subClassOf',
+  'label',
+]);
+
+const DCTERMS = createNamespace('http://purl.org/dc/terms/', [
+  'description',
+]);
+
+const SHACL = createNamespace('http://www.w3.org/ns/shacl#', [
+  'property',
+  'name',
+  'path',
+  'class',
+  'datatype',
+  'NodeShape',
+  'nodeKind'
+]);
+
+export const XSD = createNamespace('http://www.w3.org/2001/XMLSchema#', [
+  'string',
+]);
+
+function ensureArray<T>(arrayable: T | T[]): T[] {
+  if (arrayable !== null && arrayable !== undefined) {
+    return Array.isArray(arrayable) ? arrayable : [ arrayable ];
+  }
+  return [];
+}
+
+function getValueIfDefined<T>(fieldValue?: NodeObject[string]): T | undefined {
+  if (fieldValue && Array.isArray(fieldValue)) {
+    return fieldValue.map((valueItem) =>
+      getValueIfDefined<T>(valueItem)!) as unknown as T;
+  }
+  if (fieldValue && typeof fieldValue === 'object') {
+    return (fieldValue as ValueObject)['@value'] as unknown as T;
+  }
+  if (fieldValue !== undefined && fieldValue !== null) {
+    return fieldValue as unknown as T;
+  }
+}
+
+export function getIdIfDefined(nodeObject?: NodeObject | string): string | undefined {
+  if (nodeObject && typeof nodeObject === 'object') {
+    return nodeObject['@id'] as string;
+  }
+  if (nodeObject) {
+    return nodeObject;
+  }
+}
+
+interface ParsedSchemaAndPath {
+  schema: NodeObject; 
+  path: ParsedPath;
+  propertiesDoc?: string;
+  inheritanceDoc?: string[];
+}
+
+function linkToSchema(schema: NodeObject) {
+  const schemaWithFilePath = schemasWithFilePathById[schema['@id'] as string];
+  if (schemaWithFilePath) {
+    return path.join(schemaWithFilePath.path.dir, schemaWithFilePath.path.base);
+  }
+  return ''
+}
+
+function labelForSchemaAsLink(schema: NodeObject) {
+  return `[${getValueIfDefined(schema[RDFS.label]) || schema['@id']}](${linkToSchema(schema)})`;
+}
+
+function labelForSchemaAsLinkWithId(schemaId: string) {
+  const schemaWithFilePath = schemasWithFilePathById[schemaId];
+  return `[${getValueIfDefined(schemaWithFilePath.schema[RDFS.label]) || schemaWithFilePath.schema['@id']}](${linkToSchema(schemaWithFilePath.schema)})`;
+}
+
+function propertyName(property: NodeObject) {
+  return getValueIfDefined(property[SHACL.name]) ?? 
+    getIdIfDefined(ensureArray<NodeObject>(property[SHACL.path] as NodeObject[])[0])
+}
+
+function propertyType(property: NodeObject) {
+  if (SHACL.class in property) {
+    const value = getIdIfDefined(ensureArray<NodeObject>(property[SHACL.class] as NodeObject)[0]) ?? '';
+    if (value in schemasWithFilePathById) {
+      return labelForSchemaAsLinkWithId(value);
+    }
+    return value;
+  }
+  if (SHACL.nodeKind in property) {
+    return getIdIfDefined(ensureArray<NodeObject>(property[SHACL.nodeKind] as NodeObject)[0]) ?? ''
+  }
+  if (SHACL.datatype in property) {
+    return getIdIfDefined(ensureArray<NodeObject>(property[SHACL.datatype] as NodeObject)[0]) ?? '';
+  }
+  return XSD.string;
+}
+
+function generateDocumentationPropertyRows(schema: NodeObject): string {
+  const schemaId = schema['@id'] as string
+  if (schemasWithFilePathById[schemaId].propertiesDoc) {
+    return schemasWithFilePathById[schemaId].propertiesDoc!;
+  }
+
+  const parentClassesDocs = ensureArray<NodeObject>(schema[RDFS.subClassOf] as NodeObject[])
+    .reduce((arr: string[], parent) => {
+      const parentId = getIdIfDefined(parent);
+      if (parentId && parentId in schemasWithFilePathById) {
+        const parentSchema = schemasWithFilePathById[parentId].schema;
+        arr.push(generateDocumentationPropertyRows(parentSchema));
+      }
+      return arr
+    }, [])
+    .join('\n');
+
+  const propertyDocs = ensureArray<NodeObject>(schema[SHACL.property] as NodeObject[])
+    .map((property) => (
+      `| ${propertyName(property)} | ${propertyType(property)} | |`
+    ))
+    .join('\n');
+  
+  const docs = [
+    `### Properties from ${labelForSchemaAsLink(schema)}`,
+    '',
+    '| name | Type | Description |',
+    '| ---- | ---- | ----------- |',
+    propertyDocs,
+    '',
+    parentClassesDocs
+  ].join('\n');
+
+  schemasWithFilePathById[schemaId].propertiesDoc = docs;
+  return docs;
+}
+
+async function generateDocumentationPropertySection(schema: NodeObject): Promise<string> {
+  return [
+    '## Properties',
+    '',
+    generateDocumentationPropertyRows(schema),
+  ].join('\n');
+}
+
+function generateInheritanceHierarchy(schema: NodeObject): string[] {
+  const schemaId = schema['@id'] as string
+  if (schemasWithFilePathById[schemaId].inheritanceDoc) {
+    return schemasWithFilePathById[schemaId].inheritanceDoc!;
+  }
+
+  const parentClassInheritances = ensureArray<NodeObject>(schema[RDFS.subClassOf] as NodeObject[])
+    .reduce((arr: string[], parent) => {
+      const parentId = getIdIfDefined(parent);
+      if (parentId) {
+        if (parentId in schemasWithFilePathById) {
+          const parentSchema = schemasWithFilePathById[parentId].schema;
+          arr = [ ...arr, ...generateInheritanceHierarchy(parentSchema)];
+        } else {
+          arr.push(parentId);
+        }
+      }
+      return arr
+    }, []);
+  
+  let inheritanceStrings: string[] = [];
+  if (parentClassInheritances.length > 0) {
+    inheritanceStrings = parentClassInheritances.map((parentClassInheritance) => {
+      return [
+        parentClassInheritance,
+        labelForSchemaAsLink(schema),
+      ].join(' > ');
+    });
+  } else {
+    inheritanceStrings = [labelForSchemaAsLink(schema)];
+  }
+  schemasWithFilePathById[schemaId].inheritanceDoc = inheritanceStrings;
+  return inheritanceStrings;
+}
+
+function generateDocumentationHeader(schema: NodeObject) {
+  return [
+    `# ${labelForSchemaAsLink(schema)}`,
+    '',
+    'An SKL Schema',
+    '',
+    DCTERMS.description in schema ? getValueIfDefined(schema[DCTERMS.description]) : '',
+    '',
+    ...generateInheritanceHierarchy(schema),
+  ].join('\n');
+}
+
+
+async function generateDocumentationForFile(schema: NodeObject): Promise<string> {
+  return [
+    generateDocumentationHeader(schema),
+    '',
+    await generateDocumentationPropertySection(schema),
+  ].join('\n');
+}
+
+async function generateDocumentation() {
+  const schemaFiles = glob.sync("**/schema.json");
+  for (const filePath of schemaFiles) {
+    const parsedFilePath = path.parse(filePath);
+    const fileContents = await fs.readFile(filePath, { encoding: 'utf8' });
+    const schema = JSON.parse(fileContents);
+    const expandedSchema = (await jsonld.expand(schema))[0] as NodeObject;
+    if (ensureArray<string>(expandedSchema['@type'] as string[]).includes(SHACL.NodeShape)) {
+      schemasWithFilePathById[expandedSchema['@id'] as string] = {
+        path: parsedFilePath,
+        schema: expandedSchema,
+      }
+    }
+  }
+
+  for (const schemaWithFilePath of Object.values(schemasWithFilePathById)) {
+    const doc = await generateDocumentationForFile(schemaWithFilePath.schema);
+    const readmePath = path.join(schemaWithFilePath.path.dir, 'README.md');
+    await fs.writeFile(readmePath, doc);
+  }
+}
+
+generateDocumentation();

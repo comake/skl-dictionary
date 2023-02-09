@@ -4,45 +4,50 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "label": "rdfs:label",
-    "rdfs:subClassOf": { "@type": "@id" },
+    "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "shacl:path": { "@type": "@id" },
-    "shacl:class": { "@type": "@id" },
-    "shacl:datatype": { "@type": "@id" },
-    "shacl:maxCount": { "@type": "xsd:integer" },
-    "shacl:minCount": { "@type": "xsd:integer" }
+    "path": { "@id": "shacl:path", "@type": "@id" },
+    "class": { "@id": "shacl:class", "@type": "@id" },
+    "datatype": { "@id": "shacl:datatype", "@type": "@id" },
+    "maxCount": { "@id": "shacl:maxCount", "@type": "xsd:integer" },
+    "minCount": { "@id": "shacl:minCount", "@type": "xsd:integer" },
+    "name": { "@id": "shacl:name", "@type": "xsd:string" },
+    "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
+    "property": { "@id": "shacl:property", "@type": "@id" },
+    "nodeKind": { "@id": "shacl:nodeKind", "@type": "@id" },
+    "skl": "https://standardknowledge.com/ontologies/core/"
   },
-  "@id": "https://standardknowledge.com/ontology/Verb",
+  "@id": "https://standardknowledge.com/ontologies/core/Verb",
   "@type": ["owl:Class", "shacl:NodeShape"],
   "label": "Verb",
-  "shacl:closed": false,
-  "shacl:property": [
+  "subClassOf": "skl:Noun",
+  "closed": false,
+  "property": [
     {
-      "shacl:class": "shacl:NodeShape",
-      "shacl:maxCount": 1,
-      "shacl:path": "https://standardknowledge.com/ontology/returnValue"
+      "class": "shacl:NodeShape",
+      "maxCount": 1,
+      "path": "skl:returnValue",
+      "name": "returnValue"
     },
     {
-      "shacl:class": "shacl:NodeShape",
-      "shacl:maxCount": 1,
-      "shacl:nodeKind": { "@id": "shacl:BlankNode" },
-      "shacl:path": "https://standardknowledge.com/ontology/returnValueFrame"
+      "class": "shacl:NodeShape",
+      "maxCount": 1,
+      "nodeKind": { "@id": "shacl:BlankNode" },
+      "path": "skl:returnValueFrame",
+      "name": "returnValueFrame"
     },
     {
-      "shacl:class": "shacl:NodeShape",
-      "shacl:maxCount": 1,
-      "shacl:nodeKind": { "@id": "shacl:BlankNode" },
-      "shacl:path": "https://standardknowledge.com/ontology/parameters"
+      "class": "shacl:NodeShape",
+      "maxCount": 1,
+      "nodeKind": { "@id": "shacl:BlankNode" },
+      "path": "skl:parameters",
+      "name": "parameters"
     },
     {
-        "shacl:maxCount": 1,
-        "shacl:path": "https://standardknowledge.com/ontology/parametersContext"
-      },
-    {
-      "shacl:maxCount": 1,
-      "shacl:path": "rdfs:label"
+      "maxCount": 1,
+      "path": "skl:parametersContext",
+      "name": "parametersContext"
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "shacl": "http://www.w3.org/ns/shacl#",
+    "fnml": "http://semweb.mmlab.be/ns/fnml#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "label": "rdfs:label",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
+    "dcterms": "http://purl.org/dc/terms/",
+    "description": "dcterms:description",
+    "path": { "@id": "shacl:path", "@type": "@id" },
+    "name": { "@id": "shacl:name", "@type": "xsd:string" },
+    "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
+    "nodeKind": { "@id": "shacl:nodeKind", "@type": "@id" },
+    "property": { "@id": "shacl:property", "@type": "@id" },
+    "skl": "https://standardknowledge.com/ontologies/core/"
+  },
+  "@id": "https://standardknowledge.com/ontologies/core/Collection",
+  "@type": ["owl:Class", "shacl:NodeShape"],
+  "label": "Collection",
+  "description": "A collection of records, eg. returned as data in the response of an API.",
+  "subClassOf": "skl:Noun",
+  "closed": false,
+  "property": [
+    {
+      "nodeKind": "shacl:BlankNodeOrIRI",
+      "path": "skl:records",
+      "name": "records"
+    },
+    {
+      "nodeKind": "shacl:BlankNodeOrIRI",
+      "path": "skl:linkedRecords",
+      "name": "linkedRecords"
+    }
+  ]
+}
