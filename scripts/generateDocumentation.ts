@@ -224,7 +224,7 @@ async function generateDocumentationForFile(schema: NodeObject, relativeDepth: n
 function generateCategoryDocumentation() {
   return Object.entries(schemasWithFilePathByCategory).map(([category, schemasWithFilePath]) => (
     [
-      `- [${capitalize(category)}](schemas/${category})`,
+      `- [${capitalize(category)}](/schemas/${category})`,
       schemasWithFilePath.map((schemaWithFilePath) => (
         `  - ${labelForSchemaAsLink(schemaWithFilePath.schema, 0)}`
       )).join('\n')
