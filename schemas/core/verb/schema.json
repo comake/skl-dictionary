@@ -5,6 +5,8 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "label": "rdfs:label",
     "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
+    "dcterms": "http://purl.org/dc/elements/1.1/",
+    "description": "dcterms:description",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "path": { "@id": "shacl:path", "@type": "@id" },
@@ -21,6 +23,7 @@
   "@id": "https://standardknowledge.com/ontologies/core/Verb",
   "@type": ["owl:Class", "shacl:NodeShape"],
   "label": "Verb",
+  "description": "A representation of a capability exposed by the API of one or more Integrations.",
   "subClassOf": "skl:Noun",
   "closed": false,
   "property": [
