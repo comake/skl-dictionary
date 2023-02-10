@@ -2,7 +2,7 @@
 
 This repository contains a library of schemas for the Standard Knowledge Language.
 
-## Index
+## Schema Index
 
 - [Core](schemas/core)
   - [Account](schemas/core/account)

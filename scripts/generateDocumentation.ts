@@ -6,6 +6,8 @@ import jsonld, { NodeObject, ValueObject } from 'jsonld';
 const schemasWithFilePathById: Record<string, ParsedSchemaAndPath> = {};
 const schemasWithFilePathByCategory: Record<string, ParsedSchemaAndPath[]> = {};
 
+const schemaIndexHeader = '## Schema Index';
+
 type Namespace<T extends string, TBase extends string> = {
   [key in T]: `${TBase}${key}`
 };
@@ -261,9 +263,9 @@ async function generateDocumentation() {
   }
 
   const readmeContents = await fs.readFile('README.md', { encoding: 'utf8' });
-  const indexOfIndex = readmeContents.indexOf('## Index');
+  const indexOfIndex = readmeContents.indexOf(schemaIndexHeader);
   const newReadmeContents = [
-    readmeContents.slice(0, indexOfIndex + 8),
+    readmeContents.slice(0, indexOfIndex + schemaIndexHeader.length),
     '',
     generateCategoryDocumentation(),
   ].join('\n');
