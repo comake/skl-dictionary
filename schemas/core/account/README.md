@@ -9,8 +9,8 @@ A representation of a person, company, or other entity's registration and use of
 
 ## Properties
 
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| integration | [Integration](../../../schemas/core/integration) |  |
-| email | [string](http://www.w3.org/2001/XMLSchema#string) |  |
+| name | Type | Required | Description | Cardinality |
+| ---- | ---- | ---- | ----------- | ---- |
+| integration | [Integration](../../../schemas/core/integration) | false |  | 0..* |
+| email | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..* |
 

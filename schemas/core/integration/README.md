@@ -9,7 +9,7 @@ A software tool or serivce which makes data or capabilities accessible via an AP
 
 ## Properties
 
-| name | Type | Description |
-| ---- | ---- | ----------- |
+| name | Type | Required | Description | Cardinality |
+| ---- | ---- | ---- | ----------- | ---- |
 
 

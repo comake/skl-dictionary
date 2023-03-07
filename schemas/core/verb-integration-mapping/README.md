@@ -9,18 +9,18 @@ An SKL Schema
 
 ## Properties
 
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| parameterMapping | http://www.w3.org/ns/r2rml#TriplesMap |  |
-| verb | [Verb](../../../schemas/core/verb) |  |
-| operationMapping | http://www.w3.org/ns/r2rml#TriplesMap |  |
-| returnValueMapping | http://www.w3.org/ns/r2rml#TriplesMap |  |
-| returnValueFrame | http://www.w3.org/ns/shacl#BlankNodeOrIRI |  |
-| integration | [Integration](../../../schemas/core/integration) |  |
+| name | Type | Required | Description | Cardinality |
+| ---- | ---- | ---- | ----------- | ---- |
+| parameterMapping | http://www.w3.org/ns/r2rml#TriplesMap | false |  | 0..* |
+| verb | [Verb](../../../schemas/core/verb) | true |  | 1..1 |
+| operationMapping | http://www.w3.org/ns/r2rml#TriplesMap | false |  | 0..* |
+| returnValueMapping | http://www.w3.org/ns/r2rml#TriplesMap | false |  | 0..* |
+| returnValueFrame | http://www.w3.org/ns/shacl#BlankNodeOrIRI | false |  | 0..1 |
+| integration | [Integration](../../../schemas/core/integration) | true |  | 1..1 |
 
 ### Properties from [Mapping](../../../schemas/core/mapping)
 
-| name | Type | Description |
-| ---- | ---- | ----------- |
+| name | Type | Required | Description | Cardinality |
+| ---- | ---- | ---- | ----------- | ---- |
 
 

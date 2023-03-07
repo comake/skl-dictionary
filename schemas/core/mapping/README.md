@@ -9,7 +9,7 @@ A set of configuration which dictates how a program can translate between Nouns 
 
 ## Properties
 
-| name | Type | Description |
-| ---- | ---- | ----------- |
+| name | Type | Required | Description | Cardinality |
+| ---- | ---- | ---- | ----------- | ---- |
 
 

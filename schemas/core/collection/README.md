@@ -9,8 +9,8 @@ A collection of records, eg. returned as data in the response of an API.
 
 ## Properties
 
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| records | http://www.w3.org/ns/shacl#BlankNodeOrIRI |  |
-| linkedRecords | http://www.w3.org/ns/shacl#BlankNodeOrIRI |  |
+| name | Type | Required | Description | Cardinality |
+| ---- | ---- | ---- | ----------- | ---- |
+| records | http://www.w3.org/ns/shacl#BlankNodeOrIRI | false |  | 0..* |
+| linkedRecords | http://www.w3.org/ns/shacl#BlankNodeOrIRI | false |  | 0..* |
 

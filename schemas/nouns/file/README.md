@@ -9,15 +9,15 @@ An electronic document.
 
 ## Properties
 
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| label | [string](http://www.w3.org/2001/XMLSchema#string) |  |
-| sourceId | [string](http://www.w3.org/2001/XMLSchema#string) |  |
-| integration | [Integration](../../../schemas/core/integration) |  |
-| size | [string](http://www.w3.org/2001/XMLSchema#string) |  |
-| url | [string](http://www.w3.org/2001/XMLSchema#string) |  |
-| md5Checksum | [string](http://www.w3.org/2001/XMLSchema#string) |  |
-| mimeType | [string](http://www.w3.org/2001/XMLSchema#string) |  |
-| isWeblink | [boolean](http://www.w3.org/2001/XMLSchema#boolean) |  |
-| deleted | [boolean](http://www.w3.org/2001/XMLSchema#boolean) |  |
+| name | Type | Required | Description | Cardinality |
+| ---- | ---- | ---- | ----------- | ---- |
+| label | [string](http://www.w3.org/2001/XMLSchema#string) | true |  | 1..1 |
+| sourceId | [string](http://www.w3.org/2001/XMLSchema#string) | true |  | 1..1 |
+| integration | [Integration](../../../schemas/core/integration) | true |  | 1..1 |
+| size | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
+| url | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
+| md5Checksum | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
+| mimeType | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
+| isWeblink | [boolean](http://www.w3.org/2001/XMLSchema#boolean) | false |  | 0..1 |
+| deleted | [boolean](http://www.w3.org/2001/XMLSchema#boolean) | false |  | 0..1 |
 

@@ -43,7 +43,9 @@ const SHACL = createNamespace('http://www.w3.org/ns/shacl#', [
   'datatype',
   'NodeShape',
   'nodeKind',
-  'description'
+  'description',
+  'minCount',
+  'maxCount'
 ]);
 
 export const XSD = createNamespace('http://www.w3.org/2001/XMLSchema#', [
@@ -158,6 +160,17 @@ function propertyDescription(property: NodeObject): string {
   return getValueIfDefined(property[SHACL.description]) ?? '';
 }
 
+function propertyRequired(property: NodeObject): string {
+  const min = getValueIfDefined<number>(property[SHACL.minCount]);
+  return `${min !== undefined && min > 0}`
+}
+
+function propertyCardinality(property: NodeObject): string {
+  const min = getValueIfDefined<number>(property[SHACL.minCount]);
+  const max = getValueIfDefined<number>(property[SHACL.maxCount]);
+  return `${min === undefined ? 0 : min}..${max === undefined ? '*' : max}`
+}
+
 function generateDocumentationPropertyRows(schema: NodeObject, relativeDepth: number, isParent = false): string {
   const parentClassesDocs = ensureArray<NodeObject>(schema[RDFS.subClassOf] as NodeObject[])
     .reduce((arr: string[], parent) => {
@@ -173,15 +186,15 @@ function generateDocumentationPropertyRows(schema: NodeObject, relativeDepth: nu
   const properties = ensureArray<NodeObject>(schema[SHACL.property] as NodeObject[]);
   const propertyDocs = properties
     .map((property) => (
-      `| ${propertyName(property)} | ${propertyType(property, relativeDepth)} | ${propertyDescription(property)} |`
+      `| ${propertyName(property)} | ${propertyType(property, relativeDepth)} | ${propertyRequired(property)} | ${propertyDescription(property)} | ${propertyCardinality(property)} |`
     ))
     .join('\n');
   
   const docs = [
     isParent ? `### Properties from ${labelForSchemaAsLink(schema, relativeDepth)}` : '## Properties',
     '',
-    '| name | Type | Description |',
-    '| ---- | ---- | ----------- |',
+    '| name | Type | Required | Description | Cardinality |',
+    '| ---- | ---- | ---- | ----------- | ---- |',
     propertyDocs,
     '',
     parentClassesDocs

@@ -9,9 +9,9 @@ A data structure representing a concept commonly used by software tools.
 
 ## Properties
 
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| label | [string](http://www.w3.org/2001/XMLSchema#string) | A human readable identifier for this Noun. |
-| description | [string](http://www.w3.org/2001/XMLSchema#string) | A description of what this Noun represents. |
-| context | [JSON](http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON) | A JSON-LD Context Definition used to compact entities of this noun into a more human readable format |
+| name | Type | Required | Description | Cardinality |
+| ---- | ---- | ---- | ----------- | ---- |
+| label | [string](http://www.w3.org/2001/XMLSchema#string) | true | A human readable identifier for this Noun. | 1..1 |
+| description | [string](http://www.w3.org/2001/XMLSchema#string) | false | A description of what this Noun represents. | 0..1 |
+| context | [JSON](http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON) | false | A JSON-LD Context Definition used to compact entities of this noun into a more human readable format | 0..1 |
 

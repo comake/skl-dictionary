@@ -9,10 +9,10 @@ An SKL Schema
 
 ## Properties
 
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| returnValue | http://www.w3.org/ns/shacl#NodeShape |  |
-| returnValueFrame | http://www.w3.org/ns/shacl#NodeShape |  |
-| parameters | http://www.w3.org/ns/shacl#NodeShape |  |
-| parametersContext | [string](http://www.w3.org/2001/XMLSchema#string) |  |
+| name | Type | Required | Description | Cardinality |
+| ---- | ---- | ---- | ----------- | ---- |
+| returnValue | http://www.w3.org/ns/shacl#NodeShape | false |  | 0..1 |
+| returnValueFrame | http://www.w3.org/ns/shacl#NodeShape | false |  | 0..1 |
+| parameters | http://www.w3.org/ns/shacl#NodeShape | false |  | 0..1 |
+| parametersContext | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
 

@@ -9,12 +9,12 @@ An SKL Schema
 
 ## Properties
 
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| refreshToken | [string](http://www.w3.org/2001/XMLSchema#string) |  |
-| account | [Account](../../../schemas/core/account) |  |
-| accessToken | [string](http://www.w3.org/2001/XMLSchema#string) |  |
-| apiKey | [string](http://www.w3.org/2001/XMLSchema#string) |  |
-| clientId | [string](http://www.w3.org/2001/XMLSchema#string) |  |
-| clientSecret | [string](http://www.w3.org/2001/XMLSchema#string) |  |
+| name | Type | Required | Description | Cardinality |
+| ---- | ---- | ---- | ----------- | ---- |
+| refreshToken | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
+| account | [Account](../../../schemas/core/account) | true |  | 1..1 |
+| accessToken | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
+| apiKey | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
+| clientId | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
+| clientSecret | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
 
