@@ -19,7 +19,9 @@
     "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
     "nodeKind": { "@id": "shacl:nodeKind", "@type": "@id" },
     "property": { "@id": "shacl:property", "@type": "@id" },
-    "skl": "https://standardknowledge.com/ontologies/core/"
+    "skl": "https://standardknowledge.com/ontologies/core/",
+    "example": "https://example.com/",
+    "context": { "@id": "skl:context", "@type": "rdf:JSON" }
   },
   "@id": "https://example.com/File",
   "@type": ["owl:Class", "shacl:NodeShape", "skl:Noun"],
@@ -49,35 +51,73 @@
     },
     {
       "maxCount": 1,
-      "path": "skl:size",
+      "path": "example:size",
       "name": "size"
     },
     {
       "maxCount": 1,
-      "path": "skl:url",
+      "path": "example:url",
       "name": "url"
     },
     {
       "maxCount": 1,
-      "path": "skl:md5Checksum",
+      "path": "example:md5Checksum",
       "name": "md5Checksum"
     },
     {
       "maxCount": 1,
-      "path": "skl:mimeType",
+      "path": "example:mimeType",
       "name": "mimeType"
     },
     {
       "maxCount": 1,
-      "path": "skl:isWeblink",
+      "path": "example:isWeblink",
       "name": "isWeblink",
       "datatype": "xsd:boolean"
     },
     {
       "maxCount": 1,
-      "path": "skl:deleted",
+      "path": "example:deleted",
       "name": "deleted",
       "datatype": "xsd:boolean"
     }
-  ]
+  ],
+  "context": {
+    "label": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "sourceId": {
+      "@id": "https://standardknowledge.com/ontologies/core/sourceId",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "integration": {
+      "@id": "https://standardknowledge.com/ontologies/core/Integration",
+      "@type": "@id"
+    },
+    "size": {
+      "@id": "https://example.com/size",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "url": {
+      "@id": "https://example.com/url",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "md5Checksum": {
+      "@id": "https://example.com/md5Checksum",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mimeType": {
+      "@id": "https://example.com/mimeType",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "isWeblink": {
+      "@id": "https://example.com/mimeType",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "deleted": {
+      "@id": "https://example.com/mimeType",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    }
+  }
 }
