@@ -13,6 +13,6 @@ A collection of records, eg. returned as data in the response of an API.
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| records | http://www.w3.org/ns/shacl#BlankNodeOrIRI | |
-| linkedRecords | http://www.w3.org/ns/shacl#BlankNodeOrIRI | |
+| records | http://www.w3.org/ns/shacl#BlankNodeOrIRI |  |
+| linkedRecords | http://www.w3.org/ns/shacl#BlankNodeOrIRI |  |
 

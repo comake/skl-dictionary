@@ -42,7 +42,8 @@ const SHACL = createNamespace('http://www.w3.org/ns/shacl#', [
   'class',
   'datatype',
   'NodeShape',
-  'nodeKind'
+  'nodeKind',
+  'description'
 ]);
 
 export const XSD = createNamespace('http://www.w3.org/2001/XMLSchema#', [
@@ -153,6 +154,10 @@ function propertyType(property: NodeObject, relativeDepth: number) {
   return `[string](${XSD.string})`;
 }
 
+function propertyDescription(property: NodeObject): string {
+  return getValueIfDefined(property[SHACL.description]) ?? '';
+}
+
 function generateDocumentationPropertyRows(schema: NodeObject, relativeDepth: number): string {
   const parentClassesDocs = ensureArray<NodeObject>(schema[RDFS.subClassOf] as NodeObject[])
     .reduce((arr: string[], parent) => {
@@ -168,7 +173,7 @@ function generateDocumentationPropertyRows(schema: NodeObject, relativeDepth: nu
   const properties = ensureArray<NodeObject>(schema[SHACL.property] as NodeObject[]);
   const propertyDocs = properties
     .map((property) => (
-      `| ${propertyName(property)} | ${propertyType(property, relativeDepth)} | |`
+      `| ${propertyName(property)} | ${propertyType(property, relativeDepth)} | ${propertyDescription(property)} |`
     ))
     .join('\n');
   

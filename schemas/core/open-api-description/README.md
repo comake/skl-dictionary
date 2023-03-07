@@ -13,6 +13,6 @@ An SKL Schema
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| integration | [Integration](../../../schemas/core/integration) | |
-| openApiDescription | [JSON](http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON) | |
+| integration | [Integration](../../../schemas/core/integration) |  |
+| openApiDescription | [JSON](http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON) |  |
 

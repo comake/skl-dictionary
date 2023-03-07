@@ -13,8 +13,8 @@ An SKL Schema
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| returnValue | http://www.w3.org/ns/shacl#NodeShape | |
-| returnValueFrame | http://www.w3.org/ns/shacl#NodeShape | |
-| parameters | http://www.w3.org/ns/shacl#NodeShape | |
-| parametersContext | [string](http://www.w3.org/2001/XMLSchema#string) | |
+| returnValue | http://www.w3.org/ns/shacl#NodeShape |  |
+| returnValueFrame | http://www.w3.org/ns/shacl#NodeShape |  |
+| parameters | http://www.w3.org/ns/shacl#NodeShape |  |
+| parametersContext | [string](http://www.w3.org/2001/XMLSchema#string) |  |
 

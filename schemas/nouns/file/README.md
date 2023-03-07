@@ -13,13 +13,13 @@ An electronic document.
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | [string](http://www.w3.org/2001/XMLSchema#string) | |
-| sourceId | [string](http://www.w3.org/2001/XMLSchema#string) | |
-| integration | [Integration](../../../schemas/core/integration) | |
-| size | [string](http://www.w3.org/2001/XMLSchema#string) | |
-| url | [string](http://www.w3.org/2001/XMLSchema#string) | |
-| md5Checksum | [string](http://www.w3.org/2001/XMLSchema#string) | |
-| mimeType | [string](http://www.w3.org/2001/XMLSchema#string) | |
-| isWeblink | [boolean](http://www.w3.org/2001/XMLSchema#boolean) | |
-| deleted | [boolean](http://www.w3.org/2001/XMLSchema#boolean) | |
+| label | [string](http://www.w3.org/2001/XMLSchema#string) |  |
+| sourceId | [string](http://www.w3.org/2001/XMLSchema#string) |  |
+| integration | [Integration](../../../schemas/core/integration) |  |
+| size | [string](http://www.w3.org/2001/XMLSchema#string) |  |
+| url | [string](http://www.w3.org/2001/XMLSchema#string) |  |
+| md5Checksum | [string](http://www.w3.org/2001/XMLSchema#string) |  |
+| mimeType | [string](http://www.w3.org/2001/XMLSchema#string) |  |
+| isWeblink | [boolean](http://www.w3.org/2001/XMLSchema#boolean) |  |
+| deleted | [boolean](http://www.w3.org/2001/XMLSchema#boolean) |  |
 

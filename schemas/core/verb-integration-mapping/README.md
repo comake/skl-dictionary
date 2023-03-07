@@ -13,12 +13,12 @@ An SKL Schema
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| parameterMapping | http://www.w3.org/ns/r2rml#TriplesMap | |
-| verb | [Verb](../../../schemas/core/verb) | |
-| operationMapping | http://www.w3.org/ns/r2rml#TriplesMap | |
-| returnValueMapping | http://www.w3.org/ns/r2rml#TriplesMap | |
-| returnValueFrame | http://www.w3.org/ns/shacl#BlankNodeOrIRI | |
-| integration | [Integration](../../../schemas/core/integration) | |
+| parameterMapping | http://www.w3.org/ns/r2rml#TriplesMap |  |
+| verb | [Verb](../../../schemas/core/verb) |  |
+| operationMapping | http://www.w3.org/ns/r2rml#TriplesMap |  |
+| returnValueMapping | http://www.w3.org/ns/r2rml#TriplesMap |  |
+| returnValueFrame | http://www.w3.org/ns/shacl#BlankNodeOrIRI |  |
+| integration | [Integration](../../../schemas/core/integration) |  |
 
 ### Properties from [Mapping](../../../schemas/core/mapping)
 
