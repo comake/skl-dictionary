@@ -5,7 +5,7 @@ An SKL Schema
 
 
 
-[Noun](../../../schemas/core/noun) > [Mapping](../../../schemas/core/mapping) > [Verb to Integration Mapping](../../../schemas/core/verb-integration-mapping)
+[Mapping](../../../schemas/core/mapping) > [Verb to Integration Mapping](../../../schemas/core/verb-integration-mapping)
 
 ## Properties
 
@@ -25,11 +25,4 @@ An SKL Schema
 | name | Type | Description |
 | ---- | ---- | ----------- |
 
-
-### Properties from [Noun](../../../schemas/core/noun)
-
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| description | http://www.w3.org/2001/XMLSchema#string | |
 

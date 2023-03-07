@@ -5,7 +5,7 @@ An SKL Schema
 
 
 
-[Noun](../../../schemas/core/noun) > [Security Credentials](../../../schemas/core/security-credentials)
+[Security Credentials](../../../schemas/core/security-credentials)
 
 ## Properties
 
@@ -19,11 +19,4 @@ An SKL Schema
 | apiKey | http://www.w3.org/2001/XMLSchema#string | |
 | clientId | http://www.w3.org/2001/XMLSchema#string | |
 | clientSecret | http://www.w3.org/2001/XMLSchema#string | |
-
-### Properties from [Noun](../../../schemas/core/noun)
-
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| description | http://www.w3.org/2001/XMLSchema#string | |
 

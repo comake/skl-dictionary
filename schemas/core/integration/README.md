@@ -5,7 +5,7 @@ An SKL Schema
 
 A software tool or serivce which makes data or capabilities accessible via an API.
 
-[Noun](../../../schemas/core/noun) > [Integration](../../../schemas/core/integration)
+[Integration](../../../schemas/core/integration)
 
 ## Properties
 
@@ -14,11 +14,4 @@ A software tool or serivce which makes data or capabilities accessible via an AP
 | name | Type | Description |
 | ---- | ---- | ----------- |
 
-
-### Properties from [Noun](../../../schemas/core/noun)
-
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| description | http://www.w3.org/2001/XMLSchema#string | |
 

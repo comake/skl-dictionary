@@ -4,7 +4,7 @@ This repository contains a library of schemas for the Standard Knowledge Languag
 
 ## Schema Index
 
-- [Core](schemas/core)
+- [Core](/schemas/core)
   - [Account](schemas/core/account)
   - [Collection](schemas/core/collection)
   - [Integration](schemas/core/integration)
@@ -14,11 +14,11 @@ This repository contains a library of schemas for the Standard Knowledge Languag
   - [Security Credentials](schemas/core/security-credentials)
   - [Verb to Integration Mapping](schemas/core/verb-integration-mapping)
   - [Verb](schemas/core/verb)
-- [Integrations](schemas/integrations)
+- [Integrations](/schemas/integrations)
   - [Dropbox](schemas/integrations/dropbox)
-- [Mappings](schemas/mappings)
+- [Mappings](/schemas/mappings)
   - [getFilesInFolderToDropbox](schemas/mappings/getFilesInFolderToDropbox)
-- [Nouns](schemas/nouns)
+- [Nouns](/schemas/nouns)
   - [File](schemas/nouns/file)
-- [Verbs](schemas/verbs)
+- [Verbs](/schemas/verbs)
   - [getFilesInFolder](schemas/verbs/getFilesInFolder)

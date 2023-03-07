@@ -15,4 +15,5 @@ A data structure representing a concept commonly used by software tools.
 | ---- | ---- | ----------- |
 | label | http://www.w3.org/2001/XMLSchema#string | |
 | description | http://www.w3.org/2001/XMLSchema#string | |
+| context | http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON | |
 

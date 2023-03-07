@@ -5,7 +5,7 @@ An SKL Schema
 
 An electronic document.
 
-[Noun](../../../schemas/core/noun) > [File](../../../schemas/nouns/file)
+[File](../../../schemas/nouns/file)
 
 ## Properties
 
@@ -22,11 +22,4 @@ An electronic document.
 | mimeType | http://www.w3.org/2001/XMLSchema#string | |
 | isWeblink | http://www.w3.org/2001/XMLSchema#string | |
 | deleted | http://www.w3.org/2001/XMLSchema#string | |
-
-### Properties from [Noun](../../../schemas/core/noun)
-
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| description | http://www.w3.org/2001/XMLSchema#string | |
 

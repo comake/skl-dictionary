@@ -21,10 +21,9 @@
     "skl": "https://standardknowledge.com/ontologies/core/"
   },
   "@id": "https://standardknowledge.com/ontologies/core/Account",
-  "@type": ["owl:Class", "shacl:NodeShape"],
+  "@type": ["owl:Class", "shacl:NodeShape", "skl:Noun"],
   "label": "Account",
   "description": "A representation of a person, company, or other entity's registration and use of the serivces or interfaces of an Integration.",
-  "subClassOf": "skl:Noun",
   "closed": false,
   "property": [
     {

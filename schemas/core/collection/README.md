@@ -5,7 +5,7 @@ An SKL Schema
 
 A collection of records, eg. returned as data in the response of an API.
 
-[Noun](../../../schemas/core/noun) > [Collection](../../../schemas/core/collection)
+[Collection](../../../schemas/core/collection)
 
 ## Properties
 
@@ -15,11 +15,4 @@ A collection of records, eg. returned as data in the response of an API.
 | ---- | ---- | ----------- |
 | records | http://www.w3.org/ns/shacl#BlankNodeOrIRI | |
 | linkedRecords | http://www.w3.org/ns/shacl#BlankNodeOrIRI | |
-
-### Properties from [Noun](../../../schemas/core/noun)
-
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| description | http://www.w3.org/2001/XMLSchema#string | |
 

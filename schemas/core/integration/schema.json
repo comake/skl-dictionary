@@ -12,9 +12,8 @@
     "skl": "https://standardknowledge.com/ontologies/core/"
   },
   "@id": "https://standardknowledge.com/ontologies/core/Integration",
-  "@type": ["owl:Class", "shacl:NodeShape"],
+  "@type": ["owl:Class", "shacl:NodeShape", "skl:Noun"],
   "label": "Integration",
   "description": "A software tool or serivce which makes data or capabilities accessible via an API.",
-  "subClassOf": "skl:Noun",
   "closed": false
 }

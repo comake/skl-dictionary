@@ -5,7 +5,7 @@ An SKL Schema
 
 A representation of a person, company, or other entity's registration and use of the serivces or interfaces of an Integration.
 
-[Noun](../../../schemas/core/noun) > [Account](../../../schemas/core/account)
+[Account](../../../schemas/core/account)
 
 ## Properties
 
@@ -15,11 +15,4 @@ A representation of a person, company, or other entity's registration and use of
 | ---- | ---- | ----------- |
 | integration | [Integration](../../../schemas/core/integration) | |
 | email | http://www.w3.org/2001/XMLSchema#string | |
-
-### Properties from [Noun](../../../schemas/core/noun)
-
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| description | http://www.w3.org/2001/XMLSchema#string | |
 

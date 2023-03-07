@@ -3,6 +3,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "shacl": "http://www.w3.org/ns/shacl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "label": "rdfs:label",
     "dcterms": "http://purl.org/dc/terms/",
@@ -13,7 +14,9 @@
     "name": { "@id": "shacl:name", "@type": "xsd:string" },
     "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
     "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
-    "property": { "@id": "shacl:property", "@type": "@id" }
+    "property": { "@id": "shacl:property", "@type": "@id" },
+    "datatype": { "@id": "shacl:datatype", "@type": "@id" },
+    "shacl:datatype": { "@type": "xsd:string" }
   },
   "@id": "https://standardknowledge.com/ontologies/core/Noun",
   "@type": ["owl:Class", "shacl:NodeShape"],
@@ -21,16 +24,27 @@
   "description": "A data structure representing a concept commonly used by software tools.",
   "closed": false,
   "property": [
-    { 
+    {
       "maxCount": 1,
       "minCount": 1,
-      "path": "label",
-      "name": "label"
+      "name": "label",
+      "path": "rdfs:label",
+      "datatype": "xsd:string",
+      "shacl:description": "A human readable identifier for this Noun."
     },
-    { 
+    {
       "maxCount": 1,
-      "path": "description",
-      "name": "description"
+      "name": "description",
+      "path": "dcterms:description",
+      "datatype": "xsd:string",
+      "shacl:description": "A description of what this Noun represents."
+    },
+    {
+      "maxCount": 1,
+      "name": "context",
+      "path": "skl:context",
+      "datatype": "rdf:JSON",
+      "shacl:description": "A JSON-LD Context Definition used to compact entities of this noun into a more human readable format"
     }
   ]
 }

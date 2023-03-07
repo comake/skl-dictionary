@@ -5,7 +5,7 @@ An SKL Schema
 
 
 
-[Noun](../../../schemas/core/noun) > [OpenAPI Description](../../../schemas/core/open-api-description)
+[OpenAPI Description](../../../schemas/core/open-api-description)
 
 ## Properties
 
@@ -15,11 +15,4 @@ An SKL Schema
 | ---- | ---- | ----------- |
 | integration | [Integration](../../../schemas/core/integration) | |
 | openApiDescription | http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON | |
-
-### Properties from [Noun](../../../schemas/core/noun)
-
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| description | http://www.w3.org/2001/XMLSchema#string | |
 

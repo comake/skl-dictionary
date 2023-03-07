@@ -5,7 +5,7 @@ An SKL Schema
 
 A set of configuration which dictates how a program can translate between Nouns and Verbs and the API of any software tool.
 
-[Noun](../../../schemas/core/noun) > [Mapping](../../../schemas/core/mapping)
+[Mapping](../../../schemas/core/mapping)
 
 ## Properties
 
@@ -14,11 +14,4 @@ A set of configuration which dictates how a program can translate between Nouns 
 | name | Type | Description |
 | ---- | ---- | ----------- |
 
-
-### Properties from [Noun](../../../schemas/core/noun)
-
-| name | Type | Description |
-| ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| description | http://www.w3.org/2001/XMLSchema#string | |
 
