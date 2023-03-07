@@ -70,12 +70,14 @@
     {
       "maxCount": 1,
       "path": "skl:isWeblink",
-      "name": "isWeblink"
+      "name": "isWeblink",
+      "datatype": "xsd:boolean"
     },
     {
       "maxCount": 1,
       "path": "skl:deleted",
-      "name": "deleted"
+      "name": "deleted",
+      "datatype": "xsd:boolean"
     }
   ]
 }
