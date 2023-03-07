@@ -9,8 +9,6 @@ An SKL Schema
 
 ## Properties
 
-### Properties from [Security Credentials](../../../schemas/core/security-credentials)
-
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | refreshToken | [string](http://www.w3.org/2001/XMLSchema#string) |  |

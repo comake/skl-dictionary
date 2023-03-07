@@ -9,8 +9,6 @@ A set of configuration which dictates how a program can translate between Nouns 
 
 ## Properties
 
-### Properties from [Mapping](../../../schemas/core/mapping)
-
 | name | Type | Description |
 | ---- | ---- | ----------- |
 

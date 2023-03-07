@@ -9,8 +9,6 @@ An electronic document.
 
 ## Properties
 
-### Properties from [File](../../../schemas/nouns/file)
-
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | label | [string](http://www.w3.org/2001/XMLSchema#string) |  |

@@ -9,8 +9,6 @@ A representation of a person, company, or other entity's registration and use of
 
 ## Properties
 
-### Properties from [Account](../../../schemas/core/account)
-
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | integration | [Integration](../../../schemas/core/integration) |  |

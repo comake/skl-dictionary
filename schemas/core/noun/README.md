@@ -9,8 +9,6 @@ A data structure representing a concept commonly used by software tools.
 
 ## Properties
 
-### Properties from [Noun](../../../schemas/core/noun)
-
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | label | [string](http://www.w3.org/2001/XMLSchema#string) | A human readable identifier for this Noun. |

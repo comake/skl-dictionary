@@ -9,8 +9,6 @@ An SKL Schema
 
 ## Properties
 
-### Properties from [Verb](../../../schemas/core/verb)
-
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | returnValue | http://www.w3.org/ns/shacl#NodeShape |  |

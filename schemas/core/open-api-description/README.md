@@ -9,8 +9,6 @@ An SKL Schema
 
 ## Properties
 
-### Properties from [OpenAPI Description](../../../schemas/core/open-api-description)
-
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | integration | [Integration](../../../schemas/core/integration) |  |

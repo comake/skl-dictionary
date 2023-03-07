@@ -9,8 +9,6 @@ A software tool or serivce which makes data or capabilities accessible via an AP
 
 ## Properties
 
-### Properties from [Integration](../../../schemas/core/integration)
-
 | name | Type | Description |
 | ---- | ---- | ----------- |
 

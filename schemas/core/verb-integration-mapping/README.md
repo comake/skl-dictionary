@@ -9,8 +9,6 @@ An SKL Schema
 
 ## Properties
 
-### Properties from [Verb to Integration Mapping](../../../schemas/core/verb-integration-mapping)
-
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | parameterMapping | http://www.w3.org/ns/r2rml#TriplesMap |  |

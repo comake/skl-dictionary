@@ -9,8 +9,6 @@ A collection of records, eg. returned as data in the response of an API.
 
 ## Properties
 
-### Properties from [Collection](../../../schemas/core/collection)
-
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | records | http://www.w3.org/ns/shacl#BlankNodeOrIRI |  |
