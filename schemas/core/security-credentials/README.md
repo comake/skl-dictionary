@@ -13,10 +13,10 @@ An SKL Schema
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| refreshToken | http://www.w3.org/2001/XMLSchema#string | |
+| refreshToken | [string](http://www.w3.org/2001/XMLSchema#string) | |
 | account | [Account](../../../schemas/core/account) | |
-| accessToken | http://www.w3.org/2001/XMLSchema#string | |
-| apiKey | http://www.w3.org/2001/XMLSchema#string | |
-| clientId | http://www.w3.org/2001/XMLSchema#string | |
-| clientSecret | http://www.w3.org/2001/XMLSchema#string | |
+| accessToken | [string](http://www.w3.org/2001/XMLSchema#string) | |
+| apiKey | [string](http://www.w3.org/2001/XMLSchema#string) | |
+| clientId | [string](http://www.w3.org/2001/XMLSchema#string) | |
+| clientSecret | [string](http://www.w3.org/2001/XMLSchema#string) | |
 

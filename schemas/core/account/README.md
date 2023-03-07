@@ -14,5 +14,5 @@ A representation of a person, company, or other entity's registration and use of
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | integration | [Integration](../../../schemas/core/integration) | |
-| email | http://www.w3.org/2001/XMLSchema#string | |
+| email | [string](http://www.w3.org/2001/XMLSchema#string) | |
 

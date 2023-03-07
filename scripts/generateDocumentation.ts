@@ -27,6 +27,10 @@ const RDFS = createNamespace('http://www.w3.org/2000/01/rdf-schema#', [
   'label',
 ]);
 
+const RDF = createNamespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#', [
+  'JSON',
+]);
+
 const DCTERMS = createNamespace('http://purl.org/dc/terms/', [
   'description',
 ]);
@@ -43,7 +47,18 @@ const SHACL = createNamespace('http://www.w3.org/ns/shacl#', [
 
 export const XSD = createNamespace('http://www.w3.org/2001/XMLSchema#', [
   'string',
+  'number',
+  'boolean',
+  'dateTime'
 ]);
+
+const dataTypeNames: Record<string, string> = {
+  [XSD.number]: 'number',
+  [XSD.dateTime]: 'date',
+  [XSD.boolean]: 'boolean',
+  [XSD.string]: 'string',
+  [RDF.JSON]: 'JSON',
+}
 
 function capitalize(str: string): string {
   if (str.length == 0) {
@@ -125,9 +140,17 @@ function propertyType(property: NodeObject, relativeDepth: number) {
     return getIdIfDefined(ensureArray<NodeObject>(property[SHACL.nodeKind] as NodeObject)[0]) ?? ''
   }
   if (SHACL.datatype in property) {
-    return getIdIfDefined(ensureArray<NodeObject>(property[SHACL.datatype] as NodeObject)[0]) ?? '';
+    const value = getIdIfDefined(ensureArray<NodeObject>(property[SHACL.datatype] as NodeObject)[0]);
+    if (value) {
+      const name = dataTypeNames[value];
+      if (name) {
+        return `[${name}](${value})`;
+      }
+      return value;
+    }
+    return ''
   }
-  return XSD.string;
+  return `[string](${XSD.string})`;
 }
 
 function generateDocumentationPropertyRows(schema: NodeObject, relativeDepth: number): string {

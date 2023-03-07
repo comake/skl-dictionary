@@ -16,5 +16,5 @@ An SKL Schema
 | returnValue | http://www.w3.org/ns/shacl#NodeShape | |
 | returnValueFrame | http://www.w3.org/ns/shacl#NodeShape | |
 | parameters | http://www.w3.org/ns/shacl#NodeShape | |
-| parametersContext | http://www.w3.org/2001/XMLSchema#string | |
+| parametersContext | [string](http://www.w3.org/2001/XMLSchema#string) | |
 

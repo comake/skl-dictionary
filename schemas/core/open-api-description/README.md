@@ -14,5 +14,5 @@ An SKL Schema
 | name | Type | Description |
 | ---- | ---- | ----------- |
 | integration | [Integration](../../../schemas/core/integration) | |
-| openApiDescription | http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON | |
+| openApiDescription | [JSON](http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON) | |
 

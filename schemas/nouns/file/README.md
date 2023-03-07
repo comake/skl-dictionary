@@ -13,13 +13,13 @@ An electronic document.
 
 | name | Type | Description |
 | ---- | ---- | ----------- |
-| label | http://www.w3.org/2001/XMLSchema#string | |
-| sourceId | http://www.w3.org/2001/XMLSchema#string | |
+| label | [string](http://www.w3.org/2001/XMLSchema#string) | |
+| sourceId | [string](http://www.w3.org/2001/XMLSchema#string) | |
 | integration | [Integration](../../../schemas/core/integration) | |
-| size | http://www.w3.org/2001/XMLSchema#string | |
-| url | http://www.w3.org/2001/XMLSchema#string | |
-| md5Checksum | http://www.w3.org/2001/XMLSchema#string | |
-| mimeType | http://www.w3.org/2001/XMLSchema#string | |
-| isWeblink | http://www.w3.org/2001/XMLSchema#string | |
-| deleted | http://www.w3.org/2001/XMLSchema#string | |
+| size | [string](http://www.w3.org/2001/XMLSchema#string) | |
+| url | [string](http://www.w3.org/2001/XMLSchema#string) | |
+| md5Checksum | [string](http://www.w3.org/2001/XMLSchema#string) | |
+| mimeType | [string](http://www.w3.org/2001/XMLSchema#string) | |
+| isWeblink | [string](http://www.w3.org/2001/XMLSchema#string) | |
+| deleted | [string](http://www.w3.org/2001/XMLSchema#string) | |
 
