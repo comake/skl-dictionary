@@ -15,6 +15,7 @@
     "maxCount": { "@id": "shacl:maxCount", "@type": "xsd:integer" },
     "minCount": { "@id": "shacl:minCount", "@type": "xsd:integer" },
     "name": { "@id": "shacl:name", "@type": "xsd:string" },
+    "shacl:description": { "@type": "xsd:string" },
     "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
     "property": { "@id": "shacl:property", "@type": "@id" },
     "nodeKind": { "@id": "shacl:nodeKind", "@type": "@id" },
@@ -29,27 +30,33 @@
     {
       "class": "shacl:NodeShape",
       "maxCount": 1,
+      "nodeKind": { "@id": "shacl:BlankNode" },
+      "path": "skl:parameters",
+      "name": "parameters",
+      "shacl:description": "A SHACL NodeShape specifying the format and constraints that the parameters of a Verb must conform to."
+    },
+    {
+      "maxCount": 1,
+      "path": "skl:parametersContext",
+      "name": "parametersContext",
+      "datatype": "rdf:JSON",
+      "shacl:description": "A JSON-LD Context Definition used to expand the parameters supplied a Verb so that they can be validated against the Verb's `parameters` NodeShape."
+    },
+    {
+      "class": "shacl:NodeShape",
+      "maxCount": 1,
       "path": "skl:returnValue",
-      "name": "returnValue"
+      "name": "returnValue",
+      "shacl:description": "A SHACL NodeShape specifying the format and constraints that the return value of a Verb must conform to."
     },
     {
       "class": "shacl:NodeShape",
       "maxCount": 1,
       "nodeKind": { "@id": "shacl:BlankNode" },
       "path": "skl:returnValueFrame",
-      "name": "returnValueFrame"
-    },
-    {
-      "class": "shacl:NodeShape",
-      "maxCount": 1,
-      "nodeKind": { "@id": "shacl:BlankNode" },
-      "path": "skl:parameters",
-      "name": "parameters"
-    },
-    {
-      "maxCount": 1,
-      "path": "skl:parametersContext",
-      "name": "parametersContext"
+      "name": "returnValueFrame",
+      "datatype": "rdf:JSON",
+      "shacl:description": "A JSON-LD Frame used to transform the JSON-LD returned by a Mapping to this Verb."
     }
   ]
 }

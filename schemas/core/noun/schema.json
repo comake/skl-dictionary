@@ -12,6 +12,7 @@
     "maxCount": { "@id": "shacl:maxCount", "@type": "xsd:integer" },
     "minCount": { "@id": "shacl:minCount", "@type": "xsd:integer" },
     "name": { "@id": "shacl:name", "@type": "xsd:string" },
+    "shacl:description": { "@type": "xsd:string" },
     "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
     "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
     "property": { "@id": "shacl:property", "@type": "@id" },

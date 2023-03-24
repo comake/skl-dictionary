@@ -11,8 +11,8 @@ An SKL Schema
 
 | name | Type | Required | Description | Cardinality |
 | ---- | ---- | ---- | ----------- | ---- |
-| returnValue | http://www.w3.org/ns/shacl#NodeShape | false |  | 0..1 |
-| returnValueFrame | http://www.w3.org/ns/shacl#NodeShape | false |  | 0..1 |
-| parameters | http://www.w3.org/ns/shacl#NodeShape | false |  | 0..1 |
-| parametersContext | [string](http://www.w3.org/2001/XMLSchema#string) | false |  | 0..1 |
+| parameters | http://www.w3.org/ns/shacl#NodeShape | false | A SHACL NodeShape specifying the format and constraints that the parameters of a Verb must conform to. | 0..1 |
+| parametersContext | [JSON](http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON) | false | A JSON-LD Context Definition used to expand the parameters supplied a Verb so that they can be validated against the Verb's `parameters` NodeShape. | 0..1 |
+| returnValue | http://www.w3.org/ns/shacl#NodeShape | false | A SHACL NodeShape specifying the format and constraints that the return value of a Verb must conform to. | 0..1 |
+| returnValueFrame | http://www.w3.org/ns/shacl#NodeShape | false | A JSON-LD Frame used to transform the JSON-LD returned by a Mapping to this Verb. | 0..1 |
 
