@@ -12,6 +12,7 @@
     "maxCount": { "@id": "shacl:maxCount", "@type": "xsd:integer" },
     "minCount": { "@id": "shacl:minCount", "@type": "xsd:integer" },
     "name": { "@id": "shacl:name", "@type": "xsd:string" },
+    "shacl:description": { "@type": "xsd:string" },
     "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
     "property": { "@id": "shacl:property", "@type": "@id" },
     "nodeKind": { "@id": "shacl:nodeKind", "@type": "@id" },
@@ -22,39 +23,17 @@
   "@type": ["owl:Class", "shacl:NodeShape", "skl:Noun"],
   "label": "Verb to Integration Mapping",
   "subClassOf": "skl:Mapping",
+  "description": "A type of SKL Mapping that specifies how to translate from a Verb and its standard parameters into the unique operation and parameters of an Integration, and how to translate the return value of the Integration into the standard return value of the Verb.",
   "closed": false,
   "property": [
-    {
-      "class": "rr:TriplesMap",
-      "nodeKind": { "@id": "shacl:IRI" },
-      "path": "skl:parameterMapping",
-      "name": "parameterMapping"
-    },
     {
       "class": "skl:Verb",
       "maxCount": 1,
       "minCount": 1,
       "nodeKind": { "@id": "shacl:IRI" },
       "path": "skl:verb",
-      "name": "verb"
-    },
-    {
-      "class": "rr:TriplesMap",
-      "nodeKind": { "@id": "shacl:IRI" },
-      "path": "skl:operationMapping",
-      "name": "operationMapping"
-    },
-    {
-      "class": "rr:TriplesMap",
-      "nodeKind": { "@id": "shacl:IRI" },
-      "path": "skl:returnValueMapping",
-      "name": "returnValueMapping"
-    },
-    {
-      "maxCount": 1,
-      "nodeKind": { "@id": "shacl:BlankNodeOrIRI" },
-      "path": "skl:returnValueFrame",
-      "name": "returnValueFrame"
+      "name": "verb",
+      "shacl:description": "The Verb that the Mapping is used to execute in a specific Integration."
     },
     {
       "class": "skl:Integration",
@@ -62,7 +41,44 @@
       "minCount": 1,
       "nodeKind": { "@id": "shacl:IRI" },
       "path": "skl:integration",
-      "name": "integration"
+      "name": "integration",
+      "shacl:description": "The Integration who's API operation the Mapping is used to translate a Verb execution into."
+    },
+    {
+      "class": "rr:TriplesMap",
+      "nodeKind": { "@id": "shacl:IRI" },
+      "path": "skl:parameterMapping",
+      "name": "parameterMapping",
+      "shacl:description": "An RML TriplesMap specifying how the standard parameters of the Verb should be translated into the unique parameters of an Integration operation."
+    },
+    {
+      "class": "rr:TriplesMap",
+      "nodeKind": { "@id": "shacl:IRI" },
+      "path": "skl:parameterMapping",
+      "name": "parameterMappingFrame",
+      "shacl:description": "A JSON-LD Frame used to transform the JSON-LD returned by the parameterMapping into the format required by the Integration's operation."
+    },
+    {
+      "class": "rr:TriplesMap",
+      "nodeKind": { "@id": "shacl:IRI" },
+      "path": "skl:operationMapping",
+      "name": "operationMapping",
+      "shacl:description": "An RML TriplesMap specifying how the parameters of the Verb should be used to determine the name and type of the operation to perform in the Integration."
+    },
+    {
+      "class": "rr:TriplesMap",
+      "nodeKind": { "@id": "shacl:IRI" },
+      "path": "skl:returnValueMapping",
+      "name": "returnValueMapping",
+      "shacl:description": "An RML TriplesMap specifying how the unique return value of the Integration should be translated into the standard return value of the Verb."
+
+    },
+    {
+      "maxCount": 1,
+      "nodeKind": { "@id": "shacl:BlankNodeOrIRI" },
+      "path": "skl:returnValueFrame",
+      "name": "returnValueFrame",
+      "shacl:description": "A JSON-LD Frame used to transform the JSON-LD returned by the returnValueMapping into a prefered format. This field overrides the returnValueFrame of the Verb. If not supplied, the Verb's returnValueFrame will be used instead."
     }
   ]
 }
