@@ -50,9 +50,7 @@
       "shacl:description": "A SHACL NodeShape specifying the format and constraints that the return value of a Verb must conform to."
     },
     {
-      "class": "shacl:NodeShape",
       "maxCount": 1,
-      "nodeKind": { "@id": "shacl:BlankNode" },
       "path": "skl:returnValueFrame",
       "name": "returnValueFrame",
       "datatype": "rdf:JSON",
