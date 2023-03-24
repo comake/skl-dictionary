@@ -19,9 +19,9 @@
     "skl": "https://standardknowledge.com/ontologies/core/",
     "rr": "http://www.w3.org/ns/r2rml#"
   },
-  "@id": "https://standardknowledge.com/ontologies/core/VerbNounMapping",
+  "@id": "https://standardknowledge.com/ontologies/core/NounVerbMapping",
   "@type": ["owl:Class", "shacl:NodeShape", "skl:Noun"],
-  "label": "Verb to Noun Mapping",
+  "label": "Noun to Verb Mapping",
   "subClassOf": "skl:Mapping",
   "description": "A type of SKL Mapping that specifies how to translate from one Verb to another Verb based on the value of the `noun` argument.",
   "rdfs:subClassOf": "https://standardknowledge.com/ontologies/core/Mapping",

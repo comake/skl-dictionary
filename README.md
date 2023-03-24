@@ -13,7 +13,7 @@ This repository contains a library of schemas for the Standard Knowledge Languag
   - [OpenAPI Description](schemas/core/open-api-description)
   - [Security Credentials](schemas/core/security-credentials)
   - [Verb to Integration Mapping](schemas/core/verb-integration-mapping)
-  - [Verb to Noun Mapping](schemas/core/verb-noun-mapping)
+  - [Noun to Verb Mapping](schemas/core/verb-noun-mapping)
   - [Verb](schemas/core/verb)
 - [Integrations](/schemas/integrations)
   - [Dropbox](schemas/integrations/dropbox)
