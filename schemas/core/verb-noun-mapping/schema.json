@@ -26,7 +26,7 @@
   "@type": ["owl:Class", "shacl:NodeShape", "skl:Noun"],
   "label": "Verb Noun Mapping",
   "subClassOf": "skl:Mapping",
-  "description": "A type of SKL Mapping that specifies what should be done when a specific Verb is executed with a specific `noun` as an argument. The Mapping can either have a `verbMapping` to specify a target Verb to execute, or a `returnValueMapping` to directly translate the parameters of the original Verb into the desired return value. When a `verbMapping` is provided, a `parameterMapping` and `parameterMappingFrame` may be provided to translate the parameters of the original Verb into the expected format of the target Verb.",
+  "description": "A type of SKL Mapping that specifies what should be done when a Verb is executed with a specific `noun` as an argument. The Mapping can either have a `verbMapping` to specify a target Verb to execute, or a `returnValueMapping` to directly translate the parameters of the original Verb into the desired return value. When a `verbMapping` is provided, a `parameterMapping` and `parameterMappingFrame` may be provided to translate the parameters of the original Verb into the expected format of the target Verb.",
   "rdfs:subClassOf": "https://standardknowledge.com/ontologies/core/Mapping",
   "shacl:closed": false,
   "shacl:property": [
