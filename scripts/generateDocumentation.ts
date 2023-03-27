@@ -55,12 +55,17 @@ export const XSD = createNamespace('http://www.w3.org/2001/XMLSchema#', [
   'dateTime'
 ]);
 
+export const RR = createNamespace('http://www.w3.org/ns/r2rml#', [
+  'TriplesMap',
+]);
+
 const dataTypeNames: Record<string, string> = {
   [XSD.number]: 'number',
   [XSD.dateTime]: 'date',
   [XSD.boolean]: 'boolean',
   [XSD.string]: 'string',
   [RDF.JSON]: 'JSON',
+  [RR.TriplesMap]: 'TriplesMap'
 }
 
 function capitalize(str: string): string {
