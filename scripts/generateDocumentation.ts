@@ -65,6 +65,9 @@ const dataTypeNames: Record<string, string> = {
   [XSD.boolean]: 'boolean',
   [XSD.string]: 'string',
   [RDF.JSON]: 'JSON',
+}
+
+const classNames: Record<string, string> = {
   [RR.TriplesMap]: 'TriplesMap'
 }
 
@@ -141,6 +144,10 @@ function propertyType(property: NodeObject, relativeDepth: number) {
     const value = getIdIfDefined(ensureArray<NodeObject>(property[SHACL.class] as NodeObject)[0]) ?? '';
     if (value in schemasWithFilePathById) {
       return labelForSchemaAsLinkWithId(value, relativeDepth);
+    }
+    const name = classNames[value];
+    if (name) {
+      return `[${name}](${value})`;
     }
     return value;
   }

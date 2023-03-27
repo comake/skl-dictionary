@@ -13,10 +13,10 @@ An SKL Schema
 | ---- | ---- | ---- | ----------- | ---- |
 | verb | [Verb](../../../schemas/core/verb) | true | The Verb that the Mapping translates from. | 1..1 |
 | noun | [Noun](../../../schemas/core/noun) | true | The Noun that the Mapping uses to determine what action should be taken. | 1..1 |
-| parameterMapping | http://www.w3.org/ns/r2rml#TriplesMap | false | An RML TriplesMap specifying how the standard parameters of the original Verb should be translated into the parameters of the target Verb. This field only gets used if `verbMapping` is also present. | 0..* |
+| parameterMapping | [TriplesMap](http://www.w3.org/ns/r2rml#TriplesMap) | false | An RML TriplesMap specifying how the standard parameters of the original Verb should be translated into the parameters of the target Verb. This field only gets used if `verbMapping` is also present. | 0..* |
 | parameterMappingFrame | [JSON](http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON) | false | A JSON-LD Frame used to transform the JSON-LD returned by the parameterMapping into the format required by target Verb's parameters. This field only gets used if `verbMapping` and `parameterMapping` are also present. | 0..* |
-| verbMapping | http://www.w3.org/ns/r2rml#TriplesMap | false | An RML TriplesMap specifying what target Verb should be executed depending on the parameters supplied to the original Verb. | 0..* |
-| returnValueMapping | http://www.w3.org/ns/r2rml#TriplesMap | false | An RML TriplesMap specifying how the parameters of the Verb should be directly translated into a return value. If `returnValueMapping` is set, there should be no `verbMapping`, `parameterMapping`, or `parameterMappingFrame`. | 0..* |
+| verbMapping | [TriplesMap](http://www.w3.org/ns/r2rml#TriplesMap) | false | An RML TriplesMap specifying what target Verb should be executed depending on the parameters supplied to the original Verb. | 0..* |
+| returnValueMapping | [TriplesMap](http://www.w3.org/ns/r2rml#TriplesMap) | false | An RML TriplesMap specifying how the parameters of the Verb should be directly translated into a return value. If `returnValueMapping` is set, there should be no `verbMapping`, `parameterMapping`, or `parameterMappingFrame`. | 0..* |
 | returnValueFrame | [JSON](http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON) | false | A JSON-LD Frame used to transform the JSON-LD returned by the `returnValueMapping` into a prefered format. This field overrides the `returnValueFrame` of the Verb. If not supplied, the Verb's `returnValueFrame` will be used instead. | 0..1 |
 
 ### Properties from [Mapping](../../../schemas/core/mapping)
