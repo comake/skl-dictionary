@@ -19,43 +19,65 @@
     "skl": "https://standardknowledge.com/ontologies/core/",
     "rr": "http://www.w3.org/ns/r2rml#"
   },
-  "@id": "https://standardknowledge.com/ontologies/core/NounVerbMapping",
+  "@id": "https://standardknowledge.com/ontologies/core/VerbNounMapping",
   "@type": ["owl:Class", "shacl:NodeShape", "skl:Noun"],
-  "label": "Noun to Verb Mapping",
+  "label": "Verb Noun Mapping",
   "subClassOf": "skl:Mapping",
-  "description": "A type of SKL Mapping that specifies how to translate from one Verb to another Verb based on the value of the `noun` argument.",
+  "description": "A type of SKL Mapping that specifies what should be done when a specific Verb is executed with a specific `noun` as an argument. The Mapping can either have a `verbMapping` to specify a target Verb to execute, or a `returnValueMapping` to directly translate the parameters of the original Verb into the desired return value. When a `verbMapping` is provided, a `parameterMapping` and `parameterMappingFrame` may be provided to translate the parameters of the original Verb into the expected format of the target Verb.",
   "rdfs:subClassOf": "https://standardknowledge.com/ontologies/core/Mapping",
   "shacl:closed": false,
   "shacl:property": [
     {
-      "shacl:class": "https://standardknowledge.com/ontologies/core/Verb",
-      "shacl:maxCount": 1,
-      "shacl:minCount": 1,
-      "shacl:nodeKind": { "@id": "shacl:IRI" },
-      "shacl:path": "https://standardknowledge.com/ontologies/core/verb",
+      "class": "https://standardknowledge.com/ontologies/core/Verb",
+      "maxCount": 1,
+      "minCount": 1,
+      "nodeKind": { "@id": "shacl:IRI" },
+      "name": "verb",
+      "path": "https://standardknowledge.com/ontologies/core/verb",
       "shacl:description": "The Verb that the Mapping translates from."
     },
     {
-      "shacl:class": "https://standardknowledge.com/ontologies/core/Noun",
-      "shacl:maxCount": 1,
-      "shacl:minCount": 1,
-      "shacl:nodeKind": { "@id": "shacl:IRI" },
-      "shacl:path": "https://standardknowledge.com/ontologies/core/noun",
-      "shacl:description": "The Noun that the Mapping uses to determine the Verb to translate to."
+      "class": "https://standardknowledge.com/ontologies/core/Noun",
+      "maxCount": 1,
+      "minCount": 1,
+      "nodeKind": { "@id": "shacl:IRI" },
+      "name": "noun",
+      "path": "https://standardknowledge.com/ontologies/core/noun",
+      "shacl:description": "The Noun that the Mapping uses to determine what action should be taken."
     },
     {
       "class": "rr:TriplesMap",
       "nodeKind": { "@id": "shacl:IRI" },
       "path": "skl:parameterMapping",
       "name": "parameterMapping",
-      "shacl:description": "An RML TriplesMap specifying how the standard parameters of the original Verb should be translated into the parameters of the target Verb."
+      "shacl:description": "An RML TriplesMap specifying how the standard parameters of the original Verb should be translated into the parameters of the target Verb. This field only gets used if `verbMapping` is also present."
+    },
+    {
+      "path": "skl:parameterMappingFrame",
+      "name": "parameterMappingFrame",
+      "datatype": "rdf:JSON",
+      "shacl:description": "A JSON-LD Frame used to transform the JSON-LD returned by the parameterMapping into the format required by target Verb's parameters. This field only gets used if `verbMapping` and `parameterMapping` are also present."
     },
     {
       "class": "rr:TriplesMap",
       "nodeKind": { "@id": "shacl:IRI" },
-      "path": "skl:parameterMapping",
-      "name": "parameterMappingFrame",
-      "shacl:description": "A JSON-LD Frame used to transform the JSON-LD returned by the parameterMapping into the format required by target Verb's parameters."
+      "path": "skl:verbMapping",
+      "name": "verbMapping",
+      "shacl:description": "An RML TriplesMap specifying what target Verb should be executed depending on the parameters supplied to the original Verb."
+    },
+    {
+      "class": "rr:TriplesMap",
+      "nodeKind": { "@id": "shacl:IRI" },
+      "path": "skl:returnValueMapping",
+      "name": "returnValueMapping",
+      "shacl:description": "An RML TriplesMap specifying how the parameters of the Verb should be directly translated into a return value. If `returnValueMapping` is set, there should be no `verbMapping`, `parameterMapping`, or `parameterMappingFrame`."
+    },
+    {
+      "maxCount": 1,
+      "path": "skl:returnValueFrame",
+      "name": "returnValueFrame",
+      "datatype": "rdf:JSON",
+      "shacl:description": "A JSON-LD Frame used to transform the JSON-LD returned by the `returnValueMapping` into a prefered format. This field overrides the `returnValueFrame` of the Verb. If not supplied, the Verb's `returnValueFrame` will be used instead."
     }
   ]
 }

@@ -14,10 +14,10 @@ An SKL Schema
 | verb | [Verb](../../../schemas/core/verb) | true | The Verb that the Mapping is used to execute in a specific Integration. | 1..1 |
 | integration | [Integration](../../../schemas/core/integration) | true | The Integration who's API operation the Mapping is used to translate a Verb execution into. | 1..1 |
 | parameterMapping | http://www.w3.org/ns/r2rml#TriplesMap | false | An RML TriplesMap specifying how the standard parameters of the Verb should be translated into the unique parameters of an Integration operation. | 0..* |
-| parameterMappingFrame | http://www.w3.org/ns/r2rml#TriplesMap | false | A JSON-LD Frame used to transform the JSON-LD returned by the parameterMapping into the format required by the Integration's operation. | 0..* |
+| parameterMappingFrame | rdf:JSON | false | A JSON-LD Frame used to transform the JSON-LD returned by the parameterMapping into the format required by the Integration's operation. | 0..* |
 | operationMapping | http://www.w3.org/ns/r2rml#TriplesMap | false | An RML TriplesMap specifying how the parameters of the Verb should be used to determine the name and type of the operation to perform in the Integration. | 0..* |
 | returnValueMapping | http://www.w3.org/ns/r2rml#TriplesMap | false | An RML TriplesMap specifying how the unique return value of the Integration should be translated into the standard return value of the Verb. | 0..* |
-| returnValueFrame | http://www.w3.org/ns/shacl#BlankNodeOrIRI | false | A JSON-LD Frame used to transform the JSON-LD returned by the returnValueMapping into a prefered format. This field overrides the returnValueFrame of the Verb. If not supplied, the Verb's returnValueFrame will be used instead. | 0..1 |
+| returnValueFrame | rdf:JSON | false | A JSON-LD Frame used to transform the JSON-LD returned by the returnValueMapping into a prefered format. This field overrides the returnValueFrame of the Verb. If not supplied, the Verb's returnValueFrame will be used instead. | 0..1 |
 
 ### Properties from [Mapping](../../../schemas/core/mapping)
 

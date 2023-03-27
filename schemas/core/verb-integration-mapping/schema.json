@@ -52,10 +52,9 @@
       "shacl:description": "An RML TriplesMap specifying how the standard parameters of the Verb should be translated into the unique parameters of an Integration operation."
     },
     {
-      "class": "rr:TriplesMap",
-      "nodeKind": { "@id": "shacl:IRI" },
       "path": "skl:parameterMapping",
       "name": "parameterMappingFrame",
+      "datatype": "rdf:JSON",
       "shacl:description": "A JSON-LD Frame used to transform the JSON-LD returned by the parameterMapping into the format required by the Integration's operation."
     },
     {
@@ -71,13 +70,12 @@
       "path": "skl:returnValueMapping",
       "name": "returnValueMapping",
       "shacl:description": "An RML TriplesMap specifying how the unique return value of the Integration should be translated into the standard return value of the Verb."
-
     },
     {
       "maxCount": 1,
-      "nodeKind": { "@id": "shacl:BlankNodeOrIRI" },
       "path": "skl:returnValueFrame",
       "name": "returnValueFrame",
+      "datatype": "rdf:JSON",
       "shacl:description": "A JSON-LD Frame used to transform the JSON-LD returned by the returnValueMapping into a prefered format. This field overrides the returnValueFrame of the Verb. If not supplied, the Verb's returnValueFrame will be used instead."
     }
   ]
