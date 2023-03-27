@@ -24,7 +24,7 @@
   },
   "@id": "https://standardknowledge.com/ontologies/core/VerbIntegrationMapping",
   "@type": ["owl:Class", "shacl:NodeShape", "skl:Noun"],
-  "label": "Verb to Integration Mapping",
+  "label": "Verb Integration Mapping",
   "subClassOf": "skl:Mapping",
   "description": "A type of SKL Mapping that specifies how to translate from a Verb and its standard parameters into the unique operation and parameters of an Integration, and how to translate the return value of the Integration into the standard return value of the Verb.",
   "closed": false,
