@@ -3,7 +3,7 @@
 
 An SKL Schema
 
-
+A representation of a capability exposed by the API of one or more Integrations.
 
 [Verb](../../../schemas/core/verb)
 

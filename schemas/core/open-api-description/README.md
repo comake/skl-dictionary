@@ -3,7 +3,7 @@
 
 An SKL Schema
 
-
+An object holding the OpenAPI description of an Integration's API.
 
 [OpenAPI Description](../../../schemas/core/open-api-description)
 

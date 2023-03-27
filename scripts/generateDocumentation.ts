@@ -31,7 +31,7 @@ const RDF = createNamespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#', [
   'JSON',
 ]);
 
-const DCTERMS = createNamespace('http://purl.org/dc/terms/', [
+const DCTERMS = createNamespace('http://purl.org/dc/elements/1.1/', [
   'description',
 ]);
 

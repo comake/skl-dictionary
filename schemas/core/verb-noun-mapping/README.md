@@ -3,7 +3,7 @@
 
 An SKL Schema
 
-
+A type of SKL Mapping that specifies what should be done when a specific Verb is executed with a specific `noun` as an argument. The Mapping can either have a `verbMapping` to specify a target Verb to execute, or a `returnValueMapping` to directly translate the parameters of the original Verb into the desired return value. When a `verbMapping` is provided, a `parameterMapping` and `parameterMappingFrame` may be provided to translate the parameters of the original Verb into the expected format of the target Verb.
 
 [Mapping](../../../schemas/core/mapping) > [Verb Noun Mapping](../../../schemas/core/verb-noun-mapping)
 

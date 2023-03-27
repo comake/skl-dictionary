@@ -6,7 +6,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "label": "rdfs:label",
     "subClassOf": { "@id": "rdfs:subClassOf", "@type": "@id" },
-    "dcterms": "http://purl.org/dc/terms/",
+    "dcterms": "http://purl.org/dc/elements/1.1/",
     "description": "dcterms:description",
     "closed": { "@id": "shacl:closed", "@type": "xsd:boolean" },
     "skl": "https://standardknowledge.com/ontologies/core/"

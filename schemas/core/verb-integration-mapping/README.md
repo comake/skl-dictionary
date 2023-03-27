@@ -3,7 +3,7 @@
 
 An SKL Schema
 
-
+A type of SKL Mapping that specifies how to translate from a Verb and its standard parameters into the unique operation and parameters of an Integration, and how to translate the return value of the Integration into the standard return value of the Verb.
 
 [Mapping](../../../schemas/core/mapping) > [Verb to Integration Mapping](../../../schemas/core/verb-integration-mapping)
 
