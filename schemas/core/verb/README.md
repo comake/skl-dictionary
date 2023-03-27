@@ -11,8 +11,8 @@ A representation of a capability exposed by the API of one or more Integrations.
 
 | name | Type | Required | Description | Cardinality |
 | ---- | ---- | ---- | ----------- | ---- |
-| parameters | http://www.w3.org/ns/shacl#NodeShape | false | A SHACL NodeShape specifying the format and constraints that the parameters of a Verb must conform to. | 0..1 |
+| parameters | [NodeShape](http://www.w3.org/ns/shacl#NodeShape) | false | A SHACL NodeShape specifying the format and constraints that the parameters of a Verb must conform to. | 0..1 |
 | parametersContext | [JSON](http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON) | false | A JSON-LD Context Definition used to expand the parameters supplied a Verb so that they can be validated against the Verb's `parameters` NodeShape. | 0..1 |
-| returnValue | http://www.w3.org/ns/shacl#NodeShape | false | A SHACL NodeShape specifying the format and constraints that the return value of a Verb must conform to. | 0..1 |
+| returnValue | [NodeShape](http://www.w3.org/ns/shacl#NodeShape) | false | A SHACL NodeShape specifying the format and constraints that the return value of a Verb must conform to. | 0..1 |
 | returnValueFrame | [JSON](http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON) | false | A JSON-LD Frame used to transform the JSON-LD returned by a Mapping to this Verb. | 0..1 |
 

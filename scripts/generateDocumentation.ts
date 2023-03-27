@@ -68,7 +68,8 @@ const dataTypeNames: Record<string, string> = {
 }
 
 const classNames: Record<string, string> = {
-  [RR.TriplesMap]: 'TriplesMap'
+  [RR.TriplesMap]: 'TriplesMap',
+  [SHACL.NodeShape]: 'NodeShape'
 }
 
 function capitalize(str: string): string {
